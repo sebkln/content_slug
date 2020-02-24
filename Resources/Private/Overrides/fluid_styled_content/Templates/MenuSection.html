@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+<!--
+    This is a copy from EXT:fluid_styled_content.
+
+    Changes for this example extension:
+    1. Added a new condition to the content element links:
+       - If a content element has a speaking anchor link, render it.
+       - Otherwise, render the default link, e.g. #c123.
+-->
+</f:comment>
+
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{menu}">
+        <ul>
+            <f:for each="{menu}" as="page">
+                <li>
+                    <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                        <span>{page.title}</span>
+                    </a>
+                    <f:if condition="{page.content}">
+                        <ul>
+                            <f:for each="{page.content}" as="element">
+                                <f:if condition="{element.data.header}">
+                                <li>
+                                    <a href="{page.link}#{f:if(condition: element.data.tx_content_slug_anchor, then: '{element.data.tx_content_slug_anchor}', else: 'c{element.data.uid}')}"
+                                       {f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.header}">
+                                        <span>{element.data.header}</span>
+                                    </a>
+                                </li>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+
+</f:section>
+</html>
