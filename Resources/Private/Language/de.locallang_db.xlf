@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-23T18:12:17Z"
+		  product-name="content_slug" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="tt_content.tx_content_slug_anchor">
+				<source>Anchor link for header</source>
+				<target>Anker-Link für Überschrift</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
