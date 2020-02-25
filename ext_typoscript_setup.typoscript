@@ -1,7 +1,0 @@
-/*
- * For demo purposes - automatically load this TypoScript when the extension is installed.
- */
-lib.contentElement {
-  partialRootPaths.9999 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Partials/
-  templateRootPaths.9999 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Templates/
-}

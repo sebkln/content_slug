@@ -1,0 +1,7 @@
+/**
+ * Override default templates of fluid_styled_content.
+ */
+lib.contentElement {
+    partialRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Partials/
+    templateRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Templates/
+}
