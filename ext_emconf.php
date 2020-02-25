@@ -1,12 +1,12 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Demo: Slug field for content elements',
-    'description' => 'Adds a slug field for readable anchors to TYPO3 content elements. The anchor can be generated from the current header or be set freely.',
-    'category' => 'example',
+    'title' => 'Speaking URL fragments (anchors)',
+    'description' => 'Adds a slug field for human-readable anchors ("domain.com/page/#my-section") to TYPO3 content elements. By default, this anchor is rendered as the header\'s id attribute.',
+    'category' => 'fe',
     'author' => 'Sebastian Klein',
     'author_email' => 'sebastian@sebkln.de',
-    'state' => 'example',
+    'state' => 'stable',
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
