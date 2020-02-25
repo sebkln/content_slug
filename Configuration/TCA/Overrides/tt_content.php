@@ -7,16 +7,10 @@ $fields = array(
         'exclude' => true,
         'label' => 'LLL:EXT:content_slug/Resources/Private/Language/locallang_db.xlf:tt_content.tx_content_slug_anchor',
         'config' => [
-            'type' => 'slug',
+            'type' => 'input',
             'size' => 50,
             'max' => 80,
-            'generatorOptions' => [
-                'fields' => ['header'],
-                'fieldSeparator' => '/',
-                'prefixParentPageSlug' => false
-            ],
-            'fallbackCharacter' => '-',
-            'eval' => 'uniqueInPid',
+            'eval' => 'trim,Sebkln\\ContentSlug\\Evaluation\\AnchorEvaluation,uniqueInPid',
             'default' => ''
         ],
     ]
