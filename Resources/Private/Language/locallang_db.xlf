@@ -5,7 +5,7 @@
 		<header/>
 		<body>
 			<trans-unit id="tt_content.tx_content_slug_anchor">
-				<source>Anchor link for header</source>
+				<source>Human-readable anchor</source>
 			</trans-unit>
 		</body>
 	</file>

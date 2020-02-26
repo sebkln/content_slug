@@ -5,8 +5,8 @@
 		<header/>
 		<body>
 			<trans-unit id="tt_content.tx_content_slug_anchor">
-				<source>Anchor link for header</source>
-				<target>Anker-Link für Überschrift</target>
+				<source>Human-readable anchor</source>
+				<target>Lesbare Sprungmarke</target>
 			</trans-unit>
 		</body>
 	</file>
