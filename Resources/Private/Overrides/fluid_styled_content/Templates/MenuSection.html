@@ -6,7 +6,7 @@
 
     Adjustments for URL fragment rendering:
     1. Added a new condition to the content element links:
-       - If a content element has a human-readable anchor, render it.
+       - If a content element has a human-readable fragment, render it.
        - Otherwise, render the default link, e.g. #c123.
 -->
 </f:comment>
@@ -26,7 +26,7 @@
                             <f:for each="{page.content}" as="element">
                                 <f:if condition="{element.data.header}">
                                 <li>
-                                    <a href="{page.link}#{f:if(condition: element.data.tx_content_slug_anchor, then: '{element.data.tx_content_slug_anchor}', else: 'c{element.data.uid}')}"
+                                    <a href="{page.link}#{f:if(condition: element.data.tx_content_slug_fragment, then: '{element.data.tx_content_slug_fragment}', else: 'c{element.data.uid}')}"
                                        {f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.header}">
                                         <span>{element.data.header}</span>
                                     </a>

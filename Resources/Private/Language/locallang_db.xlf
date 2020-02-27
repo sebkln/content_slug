@@ -4,8 +4,8 @@
 		  product-name="content_slug">
 		<header/>
 		<body>
-			<trans-unit id="tt_content.tx_content_slug_anchor">
-				<source>Human-readable anchor</source>
+			<trans-unit id="tt_content.tx_content_slug_fragment">
+				<source>Human-readable URL #anchor</source>
 			</trans-unit>
 		</body>
 	</file>

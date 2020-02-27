@@ -4,15 +4,15 @@
 		  product-name="content_slug" target-language="de">
 		<header/>
 		<body>
-			<trans-unit id="tx_content_slug_anchor.alttitle">
-				<source>Human-readable anchor</source>
-				<target>Lesbare Sprungmarke</target>
+			<trans-unit id="tx_content_slug_fragment.alttitle">
+				<source>Human-readable URL #anchor</source>
+				<target>Lesbare URL #Sprungmarke</target>
 			</trans-unit>
-			<trans-unit id="tx_content_slug_anchor.description" resname="tx_content_slug_anchor.description">
+			<trans-unit id="tx_content_slug_fragment.description" resname="tx_content_slug_fragment.description">
 				<source>Creates an HTML anchor link to the header/content element, e.g. "#section-of-interest". The number sign (&lt;code&gt;#&lt;/code&gt;) will be added on the website by the system.</source>
 				<target>Erstellt eine HTML-Sprungmarke (Anker) zur Überschrift/zum Inhaltselement, z.B. "#interessanter-abschnitt". Die Raute (&lt;code&gt;#&lt;/code&gt;) wird vom System auf der Website ergänzt.</target>
 			</trans-unit>
-			<trans-unit id="tx_content_slug_anchor.details" xml:space="preserve">
+			<trans-unit id="tx_content_slug_fragment.details" xml:space="preserve">
             <source>These anchors will be used for example by the "Section index" content elements, if available. They can help to improve the readability of a URL.
 By default (if no anchor is given), the unique id (integer) of the content element is used there, e.g. "#c123".
 
@@ -30,7 +30,7 @@ Voreingestellt (wenn keine Sprungmarke angegeben wird) wird dort die eindeutige 
 Ein Anker darf nur bestimmte Zeichen enthalten. Wenn Sie ein nicht unterstütztes Zeichen eintragen, wird es beim Speichern des Inhaltselements entfernt oder ersetzt.
 &lt;strong&gt;Alle Sprungmarken auf derselben Seite müssen einzigartig sein.&lt;/strong&gt; Falls ein anderes Inhaltselement auf der aktuellen Seite bereits die gleiche Sprungmarke besitzt, wird Ihre neue Sprungmarke automatisch um eine Nummer erweitert.</target>
          </trans-unit>
-			<trans-unit id="tx_content_slug_anchor.syntax" resname="tx_content_slug_anchor.syntax">
+			<trans-unit id="tx_content_slug_fragment.syntax" resname="tx_content_slug_fragment.syntax">
 				<source>&lt;p&gt;You can use the following characters in this field:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ASCII characters (&lt;code&gt;a–z&lt;/code&gt;)&lt;/li&gt;

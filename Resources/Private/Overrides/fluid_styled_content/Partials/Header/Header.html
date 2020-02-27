@@ -7,8 +7,8 @@
     Adjustments for URL fragment rendering:
     1. Added an id attribute to all headings,
        which contains the contents of the custom fragment field.
-    2. Added a link with the current anchor to the heading (if available).
-    3. Again, added the anchor variable to the arguments for the defaultCase.
+    2. Added a link with the current fragment to the heading (if available).
+    3. Again, added the fragment variable to the arguments for the defaultCase.
        This is important for all content elements with the 'default' header layout!
 -->
 </f:comment>
@@ -16,38 +16,38 @@
 <f:if condition="{header}">
     <f:switch expression="{layout}">
         <f:case value="1">
-            <h1 id="{anchor}" class="{positionClass}">
-                <f:if condition="{anchor}"><a class="headline-anchor" href="#{anchor}">#</a></f:if>
+            <h1 id="{fragmentIdentifier}" class="{positionClass}">
+                <f:if condition="{fragmentIdentifier}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h1>
         </f:case>
         <f:case value="2">
-            <h2 id="{anchor}" class="{positionClass}">
-                <f:if condition="{anchor}"><a class="headline-anchor" href="#{anchor}">#</a></f:if>
+            <h2 id="{fragmentIdentifier}" class="{positionClass}">
+                <f:if condition="{fragmentIdentifier}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h2>
         </f:case>
         <f:case value="3">
-            <h3 id="{anchor}" class="{positionClass}">
-                <f:if condition="{anchor}"><a class="headline-anchor" href="#{anchor}">#</a></f:if>
+            <h3 id="{fragmentIdentifier}" class="{positionClass}">
+                <f:if condition="{fragmentIdentifier}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h3>
         </f:case>
         <f:case value="4">
-            <h4 id="{anchor}" class="{positionClass}">
-                <f:if condition="{anchor}"><a class="headline-anchor" href="#{anchor}">#</a></f:if>
+            <h4 id="{fragmentIdentifier}" class="{positionClass}">
+                <f:if condition="{fragmentIdentifier}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h4>
         </f:case>
         <f:case value="5">
-            <h5 id="{anchor}" class="{positionClass}">
-                <f:if condition="{anchor}"><a class="headline-anchor" href="#{anchor}">#</a></f:if>
+            <h5 id="{fragmentIdentifier}" class="{positionClass}">
+                <f:if condition="{fragmentIdentifier}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h5>
         </f:case>
         <f:case value="6">
-            <h6 id="{anchor}" class="{positionClass}">
-                <f:if condition="{anchor}"><a class="headline-anchor" href="#{anchor}">#</a></f:if>
+            <h6 id="{fragmentIdentifier}" class="{positionClass}">
+                <f:if condition="{fragmentIdentifier}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
             </h6>
         </f:case>
@@ -60,7 +60,7 @@
                     header: header,
                     layout: default,
                     positionClass: positionClass,
-                    anchor: anchor,
+                    fragmentIdentifier: fragmentIdentifier,
                     link: link}"/>
             </f:if>
         </f:defaultCase>

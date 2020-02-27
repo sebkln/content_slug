@@ -4,13 +4,13 @@
 		  product-name="content_slug">
 		<header/>
 		<body>
-			<trans-unit id="tx_content_slug_anchor.alttitle">
-				<source>Human-readable anchor</source>
+			<trans-unit id="tx_content_slug_fragment.alttitle">
+				<source>Human-readable URL #anchor</source>
 			</trans-unit>
-			<trans-unit id="tx_content_slug_anchor.description" resname="tx_content_slug_anchor.description">
+			<trans-unit id="tx_content_slug_fragment.description" resname="tx_content_slug_fragment.description">
 				<source>Creates an HTML anchor link to the header/content element, e.g. "#section-of-interest". The number sign (&lt;code&gt;#&lt;/code&gt;) will be set on the website by the system.</source>
 			</trans-unit>
-			<trans-unit id="tx_content_slug_anchor.details" xml:space="preserve">
+			<trans-unit id="tx_content_slug_fragment.details" xml:space="preserve">
             <source>These anchors will be used for example by the "Section index" content elements, if available. They can help to improve the readability of a URL.
 By default (if no anchor is given), the unique id (integer) of the content element is used there, e.g. "#c123".
 
@@ -20,7 +20,7 @@ By default (if no anchor is given), the unique id (integer) of the content eleme
 An anchor can only contain certain characters. If you use non-supported characters, these will be removed or replaced when the content element is saved.
 &lt;strong&gt;All anchors on the same page have to be unique.&lt;/strong&gt; If another content element already has the same anchor, your new anchor will be automatically extended with a number.</source>
          </trans-unit>
-			<trans-unit id="tx_content_slug_anchor.syntax" resname="tx_content_slug_anchor.syntax">
+			<trans-unit id="tx_content_slug_fragment.syntax" resname="tx_content_slug_fragment.syntax">
 				<source>&lt;p&gt;You can use the following characters in this field:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ASCII characters (&lt;code&gt;a–z&lt;/code&gt;)&lt;/li&gt;

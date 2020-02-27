@@ -16,7 +16,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Class for field value validation/evaluation to be used in 'eval' of TCA
  */
-class AnchorEvaluation
+class FragmentEvaluation
 {
 
     /**
@@ -39,7 +39,7 @@ class AnchorEvaluation
      */
     public function evaluateFieldValue($value)
     {
-        $value = $this->sanitizeAnchor($value);
+        $value = $this->sanitizeFragment($value);
         return $value;
     }
 
@@ -59,7 +59,7 @@ class AnchorEvaluation
      * Cleans a slug value so it can be used as an achor in a URL.
      * This is a reduced and adapted version of the SlugHelper sanitize method.
      *
-     * Admissible characters for HTML id attributes / anchors are:
+     * Admissible characters for HTML id attributes / fragment identifiers are:
      * - ASCII characters
      * - digits
      * - underscores
@@ -69,7 +69,7 @@ class AnchorEvaluation
      * @param string $slug
      * @return string
      */
-    public function sanitizeAnchor(string $slug): string
+    public function sanitizeFragment(string $slug): string
     {
         // Convert to lowercase and remove tags:
         $slug = mb_strtolower($slug, 'utf-8');
