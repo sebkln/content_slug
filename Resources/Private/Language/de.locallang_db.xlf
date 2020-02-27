@@ -8,6 +8,14 @@
 				<source>Human-readable URL #anchor</source>
 				<target>Lesbare URL #Sprungmarke</target>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_content_slug_link">
+				<source>Set link to #anchor</source>
+				<target>Link zu #Sprungmarke setzen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_content_slug_link.check">
+				<source>Activate</source>
+				<target>Aktivieren</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -5,8 +5,8 @@
     This is a copy from EXT:fluid_styled_content.
 
     Adjustments for URL fragment rendering:
-    1. Added the fragment variable to the arguments which are transferred to the main header partial.
-       Otherwise, this variable would not be available there.
+    1. Added new arguments to be transferred to the main header partial.
+       Otherwise, they would not be available there.
 -->
 </f:comment>
 
@@ -19,6 +19,7 @@
 				positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
 				link: data.header_link,
 				fragmentIdentifier: data.tx_content_slug_fragment,
+				renderAnchorLink: data.tx_content_slug_link,
 				default: settings.defaultHeaderType}" />
 			<f:render partial="Header/SubHeader" arguments="{
 				subheader: data.subheader,

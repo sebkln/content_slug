@@ -36,6 +36,17 @@ An anchor can only contain certain characters. If you use non-supported characte
 … special characters (e.g. &lt;code&gt;äöüß€&lt;/code&gt;) are converted to ASCII equivalents.&lt;/p&gt;
 				</source>
 			</trans-unit>
+			<trans-unit id="tx_content_slug_link.description" resname="tx_content_slug_link.description">
+				<source>Adds a link next to the header that contains the anchor.</source>
+			</trans-unit>
+			<trans-unit id="tx_content_slug_link.details" xml:space="preserve">
+				<source>This anchor link can be used to navigate to the current text section on the web page:
+
+When the link is clicked, the browser will jump directly to the header.
+The anchor is added to the current URL.
+
+This also enables the user to share the direct link to the desired text section.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

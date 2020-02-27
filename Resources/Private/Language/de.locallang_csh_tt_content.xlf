@@ -60,6 +60,24 @@ Ein Anker darf nur bestimmte Zeichen enthalten. Wenn Sie ein nicht unterstützte
 … besondere Zeichen (z.B. &lt;code&gt;äöüß€&lt;/code&gt;) zu ASCII-Äquivalenten umgewandelt.&lt;/p&gt;
 				</target>
 			</trans-unit>
+			<trans-unit id="tx_content_slug_link.description">
+				<source>Adds a link next to the header that contains the anchor.</source>
+				<target>Ergänzt einen Link neben der Überschrift, der die Sprungmarke beinhaltet.</target>
+			</trans-unit>
+			<trans-unit id="tx_content_slug_link.details" xml:space="preserve">
+				<source>This anchor link can be used to navigate to the current text section on the web page:
+
+When the link is clicked, the browser will jump directly to the header.
+The anchor is added to the current URL.
+
+This also enables the user to share the direct link to the desired text section.</source>
+				<target>Durch diesen Sprungmarken-Link kann der aktuelle Textabschnitt auf der Webseite angesteuert werden:
+
+Beim Auswählen des Links springt der Browser direkt zur Überschrift.
+Die Sprungmarke wird in der aktuellen URL ergänzt.
+
+Das erlaubt es dem Nutzer auch, den direkten Link zum gewünschten Textabschnitt zu teilen.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
