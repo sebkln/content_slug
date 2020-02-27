@@ -15,7 +15,7 @@ $fields = array(
         ],
     ],
     'tx_content_slug_link' => [
-        'exclude' => 1,
+        'exclude' => true,
         'label' => 'LLL:EXT:content_slug/Resources/Private/Language/locallang_db.xlf:tt_content.tx_content_slug_link',
         'config' => [
             'type' => 'check',
