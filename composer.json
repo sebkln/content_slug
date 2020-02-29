@@ -1,0 +1,42 @@
+{
+	"name": "sebkln/content-slug",
+	"type": "typo3-cms-extension",
+	"description": "Adds a slug field for human-readable anchors (\"domain.com/page/#my-section\") to TYPO3 content elements. By default, this anchor is rendered as the header's id attribute.",
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"human-readable",
+		"URL fragment",
+		"jump links",
+		"anchor",
+		"slug"
+	],
+	"homepage": "https://www.sebkln.de",
+	"authors": [
+		{
+			"name": "Sebastian Klein",
+			"email": "sebastian@sebkln.de",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"typo3/cms-core": ">=8.7.0 <10.4.99"
+	},
+	"replace": {
+		"sebkln/content-slug": "self.version",
+		"typo3-ter/content-slug": "self.version"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "content_slug"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Sebkln\\ContentSlug\\": "Classes/"
+		}
+	}
+}
