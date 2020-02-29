@@ -6,7 +6,7 @@
 Considerations
 ==============
 
-By default, this extension will generate the following HTML markup for
+**By default,** this extension will generate the following HTML markup for
 TYPO3 content element headers:
 
 .. code-block:: html
@@ -41,6 +41,6 @@ potential issue.
 
 .. tip::
 
-   You can **remove or adapt the prefix** of the fragment identifier in the
-   Fluid templates.
-
+   You can **remove or adapt the default prefix** or configure a **suffix** instead.
+   The extension provides  :ref:`TypoScript configuration <configuration-typoscript>`
+   with stdWrap support for this.

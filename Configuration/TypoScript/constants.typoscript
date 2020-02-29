@@ -1,0 +1,9 @@
+plugin.tx_contentslug {
+    settings {
+        # cat=plugin.tx_contentslug/basic/1; type=boolean; label=Prepend a string to URL fragment: By default, a prefix with the current UID is added to the fragment identifier. This should avoid matching some template related ids (e.g. '#site-header').
+        renderPrefix = 1
+
+        # cat=plugin.tx_contentslug/basic/2; type=boolean; label=Append a string to URL fragment: If activated, the current UID is added at the end of the URL fragment.
+        renderSuffix = 0
+    }
+}

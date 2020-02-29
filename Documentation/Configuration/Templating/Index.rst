@@ -7,8 +7,13 @@ Templating
 ==========
 
 This extension enhances the existing TYPO3 content elements, which are commonly
-rendered with *EXT:fluid_styled_content*. Therefore, customized Fluid templates
+rendered with `EXT:fluid_styled_content`. Therefore, customized Fluid templates
 have to be provided by this extension.
+
+It also works well with the Bootstrap Package.
+
+In both cases, be sure to load the configuration of this extension **after**
+`EXT:fluid_styled_content` or `EXT:bootstrap_package`.
 
 
 .. _templating-ts:
@@ -16,8 +21,9 @@ have to be provided by this extension.
 TypoScript setup
 ----------------
 
-The extension currently only sets new template paths for
-*EXT:fluid_styled_content*.
+You can configure the fragment identifier with :ref:`TypoScript <configuration-typoscript>`.
+
+If you customize the templates, override the template paths of the content elements.
 
 .. code-block:: typoscript
 
@@ -43,15 +49,14 @@ We need to **transfer additional variables** to *Header.html*:
 
 .. code-block:: html
    :linenos:
-   :emphasize-lines: 6-8
+   :emphasize-lines: 6-7
 
    <f:render partial="Header/Header" arguments="{
        header: data.header,
        layout: data.header_layout,
        positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
        link: data.header_link,
-       uid: data.uid,
-       fragmentIdentifier: data.tx_content_slug_fragment,
+       fragmentIdentifier: fragmentIdentifier,
        renderAnchorLink: data.tx_content_slug_link,
        default: settings.defaultHeaderType}" />
 
@@ -60,7 +65,7 @@ Resources/Private/Overrides/fluid_styled_content/Partials/Header/Header.html
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each heading (``<h1>`` to ``<h5>``) gets a new ``id`` attribute. It will contain
-the **uid** and **fragment identifier**, if a fragment was set in the
+the configured **fragment identifier**, if a fragment was set in the
 content element.
 
 If a fragment exists and the checkbox "Set link to #anchor" is activated,
@@ -73,9 +78,9 @@ symbol in the template.
    :linenos:
    :emphasize-lines: 1,3
 
-   <h1 id="{f:if(condition: fragmentIdentifier, then: 'c{uid}-{fragmentIdentifier}')}" class="{positionClass}">
+   <h1 id="{f:if(condition: fragmentIdentifier, then: '{fragmentIdentifier}')}" class="{positionClass}">
        <f:link.typolink parameter="{link}">{header}</f:link.typolink>
-       <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#c{uid}-{fragmentIdentifier}">#</a></f:if>
+       <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
    </h1>
 
 .. important::
@@ -89,7 +94,7 @@ variables again:
 
 .. code-block:: html
    :linenos:
-   :emphasize-lines: 7-9
+   :emphasize-lines: 7-8
 
    <f:defaultCase>
        <f:if condition="{default}">
@@ -97,7 +102,6 @@ variables again:
                header: header,
                layout: default,
                positionClass: positionClass,
-               uid: uid,
                fragmentIdentifier: fragmentIdentifier,
                renderAnchorLink: renderAnchorLink,
                link: link}"/>
@@ -115,12 +119,17 @@ their included content elements.
 By default, the content elements will be linked by their unique id, e.g.
 `https://www.example.org/a-sub-page/#c123`.
 
-The new Fluid condition will check for two things:
+The new Fluid condition will check if a fragment identifier is given for the
+content element.
 
-#. Is a **fragment available** in the content element?
-#. Is the **header not hidden** (``header_layout`` != 100)?
+.. note::
+   The human-readable fragment can only rendered if the header is **not hidden**.
+   Therefore, we also need to check if the ``header_layout`` is set to ``100``.
 
-If both conditions are true, a combination of uid and fragment is rendered
+   This is taken care of in the :ref:`custom DataProcessor <FragmentIdentifierProcessor>`,
+   which is added to both *Section Index* menus.
+
+If available, the configured fragment identifier is then rendered
 (identical to the anchor link in *Header.html*).
 
 Otherwise, the default anchor to the content element is rendered (``#c123``).
@@ -132,8 +141,8 @@ Otherwise, the default anchor to the content element is rendered (``#c123``).
    <f:for each="{page.content}" as="element">
        <f:if condition="{element.data.header}">
        <li>
-           <a href="{page.link}#{f:if(condition: '({element.data.tx_content_slug_fragment} && {element.data.header_layout} != 100)', then: 'c{element.data.uid}-{element.data.tx_content_slug_fragment}', else: 'c{element.data.uid}')}"
-              {f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.header}">
+           <a href="{page.link}#{f:if(condition: '{element.fragmentIdentifier}', then: '{element.fragmentIdentifier}', else: 'c{element.data.uid}')}"
+               {f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.header}">
                <span>{element.data.header}</span>
            </a>
        </li>

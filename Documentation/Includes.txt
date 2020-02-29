@@ -6,6 +6,9 @@
 .. DEFINE SOME TEXT ROLES
 .. --------------------------------------------------
 
+.. role:: aspect(emphasis)
+.. role:: sep(strong)
+
 .. role::   typoscript(code)
 
 .. role::   ts(typoscript)

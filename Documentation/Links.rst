@@ -13,7 +13,7 @@ Links
    https://github.com/sebkln/content_slug
 
 :Packagist:
-   https://packagist.org/packages/sebkln/content_slug
+   https://packagist.org/packages/sebkln/content-slug
 
 :Contact:
    sebastian@sebkln.de

@@ -1,7 +1,44 @@
-/**
- * Override default templates of fluid_styled_content.
- */
+plugin.tx_contentslug {
+    urlFragmentPrefix = TEXT
+    urlFragmentPrefix {
+        field = uid
+        stdWrap.noTrimWrap = |c|-|
+        if.isTrue = {$plugin.tx_contentslug.settings.renderPrefix}
+    }
+
+    urlFragmentSuffix = TEXT
+    urlFragmentSuffix {
+        field = uid
+        stdWrap.noTrimWrap = |-||
+        if.isTrue = {$plugin.tx_contentslug.settings.renderSuffix}
+    }
+}
+
+
 lib.contentElement {
+    // Override default templates of fluid_styled_content:
     partialRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Partials/
     templateRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Templates/
+
+    // Build a complete fragment identifier with possible prefix and suffix:
+    variables {
+        fragmentIdentifier = COA
+        fragmentIdentifier {
+            if.isTrue.field = tx_content_slug_fragment
+
+            10 =< plugin.tx_contentslug.urlFragmentPrefix
+
+            20 = TEXT
+            20.field = tx_content_slug_fragment
+
+            30 =< plugin.tx_contentslug.urlFragmentSuffix
+
+            stdWrap.trim = 1
+        }
+    }
 }
+
+
+// Process 'fragmentIdentifier' variable in section menus:
+tt_content.menu_section.dataProcessing.10.dataProcessing.20.dataProcessing.5 = Sebkln\ContentSlug\DataProcessing\FragmentIdentifierProcessor
+tt_content.menu_section_pages.dataProcessing.10.dataProcessing.20.dataProcessing.5 = Sebkln\ContentSlug\DataProcessing\FragmentIdentifierProcessor

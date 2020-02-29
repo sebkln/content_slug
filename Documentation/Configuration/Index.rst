@@ -11,5 +11,7 @@ Configuration
 	:titlesonly:
 
 	Consideration/Index
+	Constants/Index
+	Setup/Index
 	Permissions/Index
 	Templating/Index
