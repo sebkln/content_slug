@@ -25,7 +25,7 @@
                         <ul>
                             <f:for each="{page.content}" as="element">
                                 <li>
-                                    <a href="{page.link}#{f:if(condition: '({element.data.header_layout} && {element.data.header_layout} != 100)', then: 'c{element.data.uid}-{element.data.tx_content_slug_fragment}', else: 'c{element.data.uid}')}"
+                                    <a href="{page.link}#{f:if(condition: '({element.data.tx_content_slug_fragment} && {element.data.header_layout} != 100)', then: 'c{element.data.uid}-{element.data.tx_content_slug_fragment}', else: 'c{element.data.uid}')}"
                                        {f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.header}">
                                         <span>{element.data.header}</span>
                                     </a>
