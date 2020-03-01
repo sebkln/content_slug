@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
-<polygon fill="#0099CC" points="96,256 64,256 96,0 128,0 "/>
-<polygon fill="#0099CC" points="160,256 128,256 160,0 192,0 "/>
-<rect x="32" y="72" fill="#0099CC" width="192" height="32"/>
-<rect x="32" y="152" fill="#0099CC" width="192" height="32"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="M225.5 0.2L30.3 19.2C12.5 20.9-1.1 36.9 0.1 54.7l7.9 120.9C9.2 193.4 24.7 208 42.6 208H80l-32 48 128-48h37.2c17.9 0 33.3-14.6 34.4-32.4l8.4-146.2C257 11.6 243.3-1.6 225.5 0.2z" fill="#0EAFAB"/><path d="M192 96V80h-20.8l4.8-48h-16l-4.8 48h-32l4.8-48h-16l-4.8 48H80v16h25.6l-3.2 32H80v16h20.8L96 192h16l4.8-48h32l-4.8 48h16l4.8-48H192v-16h-25.6l3.2-32H192zM150.4 128h-32l3.2-32h32L150.4 128z" fill="#FFFF70"/></svg>
