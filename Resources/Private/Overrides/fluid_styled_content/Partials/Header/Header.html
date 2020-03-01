@@ -16,37 +16,37 @@
 <f:if condition="{header}">
     <f:switch expression="{layout}">
         <f:case value="1">
-            <h1 id="c{uid}-{fragmentIdentifier}" class="{positionClass}">
+            <h1 id="{f:if(condition: fragmentIdentifier, then: 'c{uid}-{fragmentIdentifier}')}" class="{positionClass}">
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
                 <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#c{uid}-{fragmentIdentifier}">#</a></f:if>
             </h1>
         </f:case>
         <f:case value="2">
-            <h2 id="c{uid}-{fragmentIdentifier}" class="{positionClass}">
+            <h2 id="{f:if(condition: fragmentIdentifier, then: 'c{uid}-{fragmentIdentifier}')}" class="{positionClass}">
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
                 <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#c{uid}-{fragmentIdentifier}">#</a></f:if>
             </h2>
         </f:case>
         <f:case value="3">
-            <h3 id="c{uid}-{fragmentIdentifier}" class="{positionClass}">
+            <h3 id="{f:if(condition: fragmentIdentifier, then: 'c{uid}-{fragmentIdentifier}')}" class="{positionClass}">
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
                 <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#c{uid}-{fragmentIdentifier}">#</a></f:if>
             </h3>
         </f:case>
         <f:case value="4">
-            <h4 id="c{uid}-{fragmentIdentifier}" class="{positionClass}">
+            <h4 id="{f:if(condition: fragmentIdentifier, then: 'c{uid}-{fragmentIdentifier}')}" class="{positionClass}">
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
                 <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#c{uid}-{fragmentIdentifier}">#</a></f:if>
             </h4>
         </f:case>
         <f:case value="5">
-            <h5 id="c{uid}-{fragmentIdentifier}" class="{positionClass}">
+            <h5 id="{f:if(condition: fragmentIdentifier, then: 'c{uid}-{fragmentIdentifier}')}" class="{positionClass}">
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
                 <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#c{uid}-{fragmentIdentifier}">#</a></f:if>
             </h5>
         </f:case>
         <f:case value="6">
-            <h6 id="c{uid}-{fragmentIdentifier}" class="{positionClass}">
+            <h6 id="{f:if(condition: fragmentIdentifier, then: 'c{uid}-{fragmentIdentifier}')}" class="{positionClass}">
                 <f:link.typolink parameter="{link}">{header}</f:link.typolink>
                 <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#c{uid}-{fragmentIdentifier}">#</a></f:if>
             </h6>
