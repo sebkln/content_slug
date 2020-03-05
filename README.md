@@ -4,7 +4,7 @@
 
 ## Full documentation
 
-You can find a more detailed documentation including several screenshots and how-tos on [docs.typo3.org](https://docs.typo3.org/p/sebkln/content_slug/master/en-us/) (HTML) and in the `Documentation/` folder (ReST).
+You can find a more detailed documentation including several screenshots and how-tos on [docs.typo3.org](https://docs.typo3.org/p/sebkln/content-slug/master/en-us/) (HTML) and in the `Documentation/` folder (ReST).
 
 
 ## Introduction
