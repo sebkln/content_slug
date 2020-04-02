@@ -73,14 +73,14 @@ Correct syntax for URL anchors
    be automatically appended with increasing numbering when saving.
 
    If you write a non-supported character in the URL anchor field, it will be
-   **replaced** when you save the content element.
+   **replaced** when you leave the field or save the content element.
 
 .. tip::
 
    For your convenience, you can e.g. fill the URL anchor field with
    *"Learn all about Product X"*.
 
-   When you save the content element, it will be converted to
+   When you leave the field or save the content element, it will be converted to
    *"learn-all-about-product-x"*.
 
 **The following characters are allowed in this field:**
@@ -91,7 +91,7 @@ Correct syntax for URL anchors
 - hyphens (``-``)
 - periods (``.``)
 
-**When the content element is saved …**
+**As soon as you leave the field (or the content element is saved) …**
 
 - … all characters are converted to lowercase.
 - … HTML elements are removed completely.
