@@ -11,7 +11,12 @@ $fields = array(
             'size' => 50,
             'max' => 80,
             'eval' => 'trim,Sebkln\\ContentSlug\\Evaluation\\FragmentEvaluation,uniqueInPid',
-            'default' => ''
+            'default' => '',
+            'fieldControl' => [
+                'importControl' => [
+                    'renderType' => 'generateFragmentFromHeaderControl'
+                ]
+            ]
         ],
     ],
     'tx_content_slug_link' => [

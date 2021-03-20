@@ -47,7 +47,11 @@ This extension will help you with that!
 ----------------------------------
 
 You can use the following text field to set a more readable anchor for a
-TYPO3 content element:
+TYPO3 content element.
+
+The button on the right allows you to automatically generate an anchor from the
+current contents of the header field.
+You can, of course, modify the anchor afterwards.
 
 .. figure:: ../Images/EditorManual/field-fragment.png
    :width: 910px

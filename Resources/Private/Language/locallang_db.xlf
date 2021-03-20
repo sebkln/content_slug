@@ -7,6 +7,9 @@
 			<trans-unit id="tt_content.tx_content_slug_fragment">
 				<source>Human-readable URL #anchor</source>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_content_slug_fragment.generateFromHeader">
+				<source>Generate anchor from header</source>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_content_slug_link">
 				<source>Set link to #anchor</source>
 			</trans-unit>

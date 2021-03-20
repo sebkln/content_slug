@@ -49,6 +49,7 @@ Features
 ~~~~~~~~
 
 - **Editors** can :ref:`set individual, human-readable fragment identifiers <editors-explanation-fragment>` per content element.
+- **Editors** can use a button to automatically generate a fragment from the current header.
 - **Editors** can :ref:`activate anchor links to headers <editors-explanation-anchorlink>` per content element.
 - **Fallback:** If no fragment is given, the default link is used in section menus.
 - **Evaluation #1:** Only supported characters are stored. Special characters are replaced.

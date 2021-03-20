@@ -40,6 +40,7 @@ An editor can activate these with a checkbox for individual content elements.
 ### Features
 
 - Editors can set individual, human-readable fragment identifiers per content element.
+- Editors can use a button to automatically generate a fragment from the current header.
 - Editors can activate anchor links to headers per content element.
 - Fallback: If no fragment is given, the default link is used in section menus.
 - Evaluation #1: Only supported characters are stored. Special characters are replaced.
