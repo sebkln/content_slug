@@ -19,12 +19,13 @@ Configure prefix and suffix
 
 .. container:: ts-properties
 
-	================== =================================================== ================================
-	Property           Data type                                           Default
-	================== =================================================== ================================
-	urlFragmentPrefix_ :ref:`Content Object (cObject) <data-type-cobject>`  *TEXT cObject with current UID*
-	urlFragmentSuffix_ :ref:`Content Object (cObject) <data-type-cobject>`  *TEXT cObject with current UID*
-	================== =================================================== ================================
+   =========================== =================================================== ================================
+   Property                    Data type                                           Default
+   =========================== =================================================== ================================
+   urlFragmentPrefix_          :ref:`Content Object (cObject) <data-type-cobject>` *TEXT cObject with current UID*
+   urlFragmentSuffix_          :ref:`Content Object (cObject) <data-type-cobject>` *TEXT cObject with current UID*
+   replaceFragmentInPageLinks_ :ref:`t3tsref:data-type-boolean`                    1
+   =========================== =================================================== ================================
 
 
 .. _urlFragmentPrefix:
@@ -109,16 +110,43 @@ urlFragmentSuffix
          section-of-interest-123
 
 
+.. _replaceFragmentInPageLinks:
+
+settings.replaceFragmentInPageLinks
+"""""""""""""""""""""""""""""""""""
+
+.. container:: table-row
+
+   Property
+      settings.replaceFragmentInPageLinks
+
+   Data type
+     :ref:`t3tsref:data-type-boolean`
+
+   Description
+      When activated, fragment links set in the RTE or TCA fields of type
+      :php:`inputLink` are replaced with the human-readable fragment identifier.
+   Default
+      :typoscript:`1` (per TypoScript constant)
+
+
 .. _fragmentIdentifierFluidVariable:
 
-Assemble :typoscript:`fragmentIdentifier` variable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Assemble the :typoscript:`fragmentIdentifier` variable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This variable is available in all Fluid templates of EXT:fluid_styled_content
 and allows to configure the complete URL fragment at a central place.
 
-It is also used in the custom DataProcessor :typoscript:`FragmentIdentifierProcessor`,
-which will process the URL fragments for the "Section Index" content elements.
+.. attention::
+   This variable is also processed in the following classes:
+
+   #. The custom DataProcessor :php:`FragmentIdentifierProcessor`, which will
+      process the URL fragments for the "Section Index" content elements.
+   #. The :php:`replaceFragment` hook, which allows to overwrite fragments for
+      links set in the rich text editor or in TCA fields with renderType
+      :php:`inputLink`.
+
 
 .. code-block:: typoscript
 
@@ -169,7 +197,7 @@ is needed.
 Sanitize custom data with :typoscript:`postUserFunc`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In case you append or prepend some custom strings, you can use the fragment
+In case you append or prepend some **custom strings**, you can use the fragment
 evaluation to :ref:`sanitize <editors-fragment-syntax>` the completed URL fragment again:
 
 .. code-block:: typoscript

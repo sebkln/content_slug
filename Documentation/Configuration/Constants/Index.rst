@@ -10,12 +10,13 @@ TypoScript Constants Reference
 
 .. container:: ts-properties
 
-	=========================== ===================================== ========
-	Property                    Data type                             Default
-	=========================== ===================================== ========
-	settings.renderPrefix_      :ref:`t3tsref:data-type-boolean`      1
-	settings.renderSuffix_      :ref:`t3tsref:data-type-boolean`      0
-	=========================== ===================================== ========
+   ==================================== ===================================== ========
+   Property                             Data type                             Default
+   ==================================== ===================================== ========
+   settings.renderPrefix_               :ref:`t3tsref:data-type-boolean`      1
+   settings.renderSuffix_               :ref:`t3tsref:data-type-boolean`      0
+   settings.replaceFragmentInPageLinks_ :ref:`t3tsref:data-type-boolean`      1
+   ==================================== ===================================== ========
 
 Property details
 ^^^^^^^^^^^^^^^^
@@ -65,3 +66,19 @@ settings.renderSuffix
       You can customize the suffix in :typoscript:`plugin.tx_contentslug.urlFragmentSuffix`
    Default
       :typoscript:`0`
+
+.. _settings.replaceFragmentInPageLinks:
+
+settings.replaceFragmentInPageLinks
+"""""""""""""""""""""""""""""""""""
+.. container:: table-row
+
+   Property
+      settings.replaceFragmentInPageLinks
+   Data type
+      boolean
+   Description
+      When activated, fragment links set in the RTE or TCA fields of type
+      :php:`inputLink` are replaced with the human-readable fragment identifier.
+   Default
+      :typoscript:`1`

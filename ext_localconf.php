@@ -10,3 +10,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1587208269] = [
     'priority' => 30,
     'class' => \Sebkln\ContentSlug\FormEngine\FieldControl\GenerateFragmentFromHeaderControl::class
 ];
+
+// Register hook to overwrite fragments in page links (RTE and TCA):
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typolinkProcessing']['typolinkModifyParameterForPageLinks'][] = \Sebkln\ContentSlug\Hooks\ReplaceFragment::class;

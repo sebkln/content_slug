@@ -1,4 +1,8 @@
 plugin.tx_contentslug {
+    settings {
+        replaceFragmentInPageLinks = {$plugin.tx_contentslug.settings.replaceFragmentInPageLinks}
+    }
+
     urlFragmentPrefix = TEXT
     urlFragmentPrefix {
         field = uid

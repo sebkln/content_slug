@@ -21,11 +21,14 @@ Perform the following steps:
    into your TypoScript template.
 #. Add permissions for the new ``tt_content`` fields ``tx_content_slug_fragment``
    and ``tx_content_slug_link`` for your editors.
-#. Customize the Fluid templates, if necessary.
+#. Configure the fragment with TypoScript and customize the Fluid templates,
+   if necessary.
 
 
 Get the extension
 ~~~~~~~~~~~~~~~~~
+
+#. **Use composer**: Use ``composer require sebkln/content-slug``
 
 #. **Use the Extension Manager:** Select "Get extensions". Press the
    "Update now" button and search for the extension key **content_slug**.
@@ -36,8 +39,6 @@ Get the extension
    `https://extensions.typo3.org/extension/content_slug
    <https://extensions.typo3.org/extension/content_slug>`_.
    Afterwards, upload the file in the Extension Manager.
-
-#. **Use composer**: Use ``composer require sebkln/content-slug``
 
 You can also get the latest *dev-master* version from
 `GitHub <https://github.com/sebkln/content_slug>`_ by using the command line:
