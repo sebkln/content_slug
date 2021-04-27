@@ -9,7 +9,7 @@ Introduction
 "Speaking URLs" are a must-have feature for web pages. TYPO3 v9 and newer provide the Routing feature for this,
 former TYPO3 versions needed the third-party extensions *RealURL* or *CoolUri*.
 
-TYPO3 also provides the navigational content elements *"Section menu"* and *"Section index of subpages from selected pages"*,
+TYPO3 also provides the navigational content elements *"Section index"* and *"Section index of subpages from selected pages"*,
 which will build a list of pages and their included content elements.
 
 These content elements will be linked by their unique id, e.g.:

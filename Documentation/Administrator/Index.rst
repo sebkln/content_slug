@@ -6,8 +6,8 @@
 Administrator Manual
 ====================
 
-.. _admin-installation:
 
+.. _admin-installation:
 
 Installation
 ------------
@@ -82,3 +82,15 @@ customized Fluid templates.
 
 The :ref:`configuration` section covers TypoScript settings and templating.
 Be sure to read :ref:`consideration` first.
+
+
+.. _admin-subpages:
+
+Subpages
+--------
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   Upgrade/Index

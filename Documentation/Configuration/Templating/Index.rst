@@ -112,8 +112,8 @@ variables again:
 Resources/Private/Overrides/fluid_styled_content/Templates/MenuSection.html
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The TYPO3 content elements of ``CType`` *"Section menu"* and
-*"Section index of subpages from selected pages"* both build a list of pages and
+The TYPO3 content elements of ``CType`` *"Section Index"* and
+*"Section Index of subpages from selected pages"* both build a list of pages and
 their included content elements.
 
 By default, the content elements will be linked by their unique id, e.g.
