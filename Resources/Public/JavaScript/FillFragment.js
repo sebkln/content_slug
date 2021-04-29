@@ -20,7 +20,7 @@ define(['TYPO3/CMS/Backend/FormEngine'], function (FormEngine) {
     fragmentBtn.addEventListener('click', function (evt) {
       evt.preventDefault();
       fragmentField.value = TBE_EDITOR.customEvalFunctions['Sebkln\\ContentSlug\\Evaluation\\FragmentEvaluation'](headerField.value);
-      TBE_EDITOR.fieldChanged('tt_content', elemId, 'tx_content_slug_fragment', 'data[tt_content][' + elemId + '][tx_content_slug_fragment]');
+      fragmentField.dispatchEvent(new Event('change', {bubbles: true, cancelable: true}));
     });
   };
 
