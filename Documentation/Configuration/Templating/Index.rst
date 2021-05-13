@@ -78,7 +78,7 @@ symbol in the template.
    :linenos:
    :emphasize-lines: 1,3
 
-   <h1 id="{f:if(condition: fragmentIdentifier, then: '{fragmentIdentifier}')}" class="{positionClass}">
+   <h1 id="{fragmentIdentifier}" class="{positionClass}">
        <f:link.typolink parameter="{link}">{header}</f:link.typolink>
        <f:if condition="{fragmentIdentifier} && {renderAnchorLink}"><a class="headline-anchor" href="#{fragmentIdentifier}">#</a></f:if>
    </h1>
