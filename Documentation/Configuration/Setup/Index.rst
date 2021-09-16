@@ -3,17 +3,16 @@
 
 .. _configuration-typoscript:
 
+==========================
 TypoScript Setup Reference
 ==========================
-
-**Table of contents**
 
 .. contents::
    :depth: 2
 
 
 Configure prefix and suffix
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===========================
 
 :typoscript:`plugin.tx_contentslug`
 
@@ -31,7 +30,7 @@ Configure prefix and suffix
 .. _urlFragmentPrefix:
 
 urlFragmentPrefix
-"""""""""""""""""
+-----------------
 
 .. container:: table-row
 
@@ -72,7 +71,7 @@ urlFragmentPrefix
 .. _urlFragmentSuffix:
 
 urlFragmentSuffix
-"""""""""""""""""
+-----------------
 
 .. container:: table-row
 
@@ -113,7 +112,7 @@ urlFragmentSuffix
 .. _replaceFragmentInPageLinks:
 
 settings.replaceFragmentInPageLinks
-"""""""""""""""""""""""""""""""""""
+-----------------------------------
 
 .. container:: table-row
 
@@ -133,7 +132,7 @@ settings.replaceFragmentInPageLinks
 .. _fragmentIdentifierFluidVariable:
 
 Assemble the :typoscript:`fragmentIdentifier` variable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+======================================================
 
 This variable is available in all Fluid templates of EXT:fluid_styled_content
 and allows to configure the complete URL fragment at a central place.
@@ -177,7 +176,7 @@ and allows to configure the complete URL fragment at a central place.
 .. _FragmentIdentifierProcessor:
 
 Use :typoscript:`FragmentIdentifierProcessor` for "Section Index" menus
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=======================================================================
 
 The *menu* content elements of type "Section Index" are built with DataProcessors.
 
@@ -195,7 +194,7 @@ is needed.
 .. _postUserFunc:
 
 Sanitize custom data with :typoscript:`postUserFunc`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====================================================
 
 In case you append or prepend some **custom strings**, you can use the fragment
 evaluation to :ref:`sanitize <editors-fragment-syntax>` the completed URL fragment again:

@@ -3,6 +3,7 @@
 
 .. _configuration:
 
+=============
 Configuration
 =============
 

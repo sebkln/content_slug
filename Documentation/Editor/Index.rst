@@ -3,13 +3,14 @@
 
 .. _editors-manual:
 
+===========
 For editors
 ===========
 
 .. _editors-preface:
 
 Preface
--------
+=======
 
 You may already know the following special *menu* content elements in TYPO3:
 
@@ -44,7 +45,7 @@ This extension will help you with that!
 .. _editors-explanation-fragment:
 
 1.) Getting human-readable anchors
-----------------------------------
+==================================
 
 You can use the following text field to set a more readable anchor for a
 TYPO3 content element.
@@ -64,7 +65,7 @@ You can, of course, modify the anchor afterwards.
 .. _editors-fragment-syntax:
 
 Correct syntax for URL anchors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 .. attention::
 
@@ -112,7 +113,7 @@ Correct syntax for URL anchors
 .. _editors-explanation-anchorlink:
 
 2.) Extra: Adding a new link next to the header
------------------------------------------------
+===============================================
 
 Please hover your mouse cursor over a heading in this tutorial.
 Do you see the **link symbol** showing up next to it?

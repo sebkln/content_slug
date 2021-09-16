@@ -3,6 +3,7 @@
 
 .. _configuration-constants:
 
+==============================
 TypoScript Constants Reference
 ==============================
 
@@ -19,12 +20,12 @@ TypoScript Constants Reference
    ==================================== ===================================== ========
 
 Property details
-^^^^^^^^^^^^^^^^
+================
 
 .. _settings.renderPrefix:
 
 settings.renderPrefix
-"""""""""""""""""""""
+---------------------
 .. container:: table-row
 
    Property
@@ -47,7 +48,7 @@ settings.renderPrefix
 .. _settings.renderSuffix:
 
 settings.renderSuffix
-"""""""""""""""""""""
+---------------------
 .. container:: table-row
 
    Property
@@ -70,7 +71,7 @@ settings.renderSuffix
 .. _settings.replaceFragmentInPageLinks:
 
 settings.replaceFragmentInPageLinks
-"""""""""""""""""""""""""""""""""""
+-----------------------------------
 .. container:: table-row
 
    Property

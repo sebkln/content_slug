@@ -3,6 +3,7 @@
 
 .. _introduction:
 
+============
 Introduction
 ============
 
@@ -24,7 +25,7 @@ It's working well, but it's not human-readable.
 .. _intro-what-it-does:
 
 What does it do?
-----------------
+================
 
 First of all, this extension provides **human-readable URL fragments** for TYPO3 content elements:
 
@@ -46,7 +47,7 @@ An editor can activate these with a checkbox for individual content elements.
 .. _intro-features:
 
 Features
-~~~~~~~~
+--------
 
 - **Editors** can :ref:`set individual, human-readable fragment identifiers <editors-explanation-fragment>` per content element.
 - **Editors** can use a button to automatically generate a fragment from the current header.
@@ -62,7 +63,7 @@ Features
 .. _intro-screenshots:
 
 Screenshots
------------
+===========
 
 You can find more screenshots in the Editors Manual.
 

@@ -3,8 +3,9 @@
 
 .. _links:
 
+=====
 Links
------
+=====
 
 :TER:
    https://extensions.typo3.org/extension/content_slug

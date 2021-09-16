@@ -3,6 +3,7 @@
 
 .. _admin-manual:
 
+====================
 Administrator Manual
 ====================
 
@@ -10,7 +11,7 @@ Administrator Manual
 .. _admin-installation:
 
 Installation
-------------
+============
 
 The extension needs to be installed as any other extension of TYPO3 CMS.
 
@@ -26,7 +27,7 @@ Perform the following steps:
 
 
 Get the extension
-~~~~~~~~~~~~~~~~~
+-----------------
 
 #. **Use composer**: Use ``composer require sebkln/content-slug``
 
@@ -49,7 +50,7 @@ You can also get the latest *dev-master* version from
 
 
 Include the static TypoScript template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
 The extension ships some TypoScript code which needs to be included.
 
@@ -79,7 +80,7 @@ customized Fluid templates.
 .. important::
 
    If you already customized the same Fluid templates for your website,
-   you'll need to extend your version with some new variables and viewhelpers.
+   you'll need to extend your version with some new variables and ViewHelpers.
 
 The :ref:`configuration` section covers TypoScript settings and templating.
 Be sure to read :ref:`consideration` first.
@@ -91,7 +92,7 @@ Subpages
 --------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :titlesonly:
 
    Upgrade/Index

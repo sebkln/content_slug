@@ -3,6 +3,7 @@
 
 .. _known-problems:
 
+==============
 Known Problems
 ==============
 
@@ -10,7 +11,7 @@ Known Problems
    If you encounter an error, please report it `here <https://github.com/sebkln/content_slug/issues>`__.
 
 Current limitation in :typoscript:`FragmentIdentifierProcessor`
----------------------------------------------------------------
+===============================================================
 
 While the DataProcessor can process TypoScript references (:typoscript:`=<`)
 to other cObjects **inside** :typoscript:`fragmentIdentifier`,

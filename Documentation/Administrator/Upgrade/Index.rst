@@ -3,6 +3,7 @@
 
 .. _admin-upgrade:
 
+=======================
 Upgrading the extension
 =======================
 
@@ -10,7 +11,7 @@ Upgrading the extension
 .. _admin-upgrade-to-v2:
 
 Upgrading from EXT:content_slug 1.x to 2.x
-------------------------------------------
+==========================================
 
 Version 2.0.0 allows to configure the URL fragment with TypoScript. Depending on
 how you customized Fluid templates, this *can* be a breaking change.
@@ -19,7 +20,7 @@ We can differentiate between the two *Header* partials and the *Section Index*
 templates:
 
 Potentially breaking: Header partials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 Formerly, the *Header/All.html* partial transferred two additional variables to
 the *Header/Header.html* partial:
@@ -53,7 +54,7 @@ partials directly from this extension **and** customized the other one in your
 sitepackage.
 
 Should be non-breaking: "Section Index" templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------
 
 Both *"Section Index"* templates were simplified, using the new TypoScript
 variable ``fragmentIdentifier``.

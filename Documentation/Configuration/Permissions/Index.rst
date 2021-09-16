@@ -3,6 +3,7 @@
 
 .. _user-permissions:
 
+================
 User permissions
 ================
 

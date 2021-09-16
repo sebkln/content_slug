@@ -3,6 +3,7 @@
 
 .. _templating:
 
+==========
 Templating
 ==========
 
@@ -19,7 +20,7 @@ In both cases, be sure to load the configuration of this extension **after**
 .. _templating-ts:
 
 TypoScript setup
-----------------
+================
 
 You can configure the fragment identifier with :ref:`TypoScript <configuration-typoscript>`.
 
@@ -36,14 +37,14 @@ If you customize the templates, override the template paths of the content eleme
 .. _templating-fluid:
 
 Fluid templates
----------------
+================
 
-The customized Fluid templates contain some new variables and viewhelpers to
+The customized Fluid templates contain some new variables and ViewHelpers to
 render the contents of the new fields.
 
 
 Resources/Private/Overrides/fluid_styled_content/Partials/Header/All.html
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------
 
 We need to **transfer additional variables** to *Header.html*:
 
@@ -62,7 +63,7 @@ We need to **transfer additional variables** to *Header.html*:
 
 
 Resources/Private/Overrides/fluid_styled_content/Partials/Header/Header.html
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------------
 
 Each heading (``<h1>`` to ``<h5>``) gets a new ``id`` attribute. It will contain
 the configured **fragment identifier**, if a fragment was set in the
@@ -110,7 +111,7 @@ variables again:
 
 
 Resources/Private/Overrides/fluid_styled_content/Templates/MenuSection.html
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------------------------------
 
 The TYPO3 content elements of ``CType`` *"Section Index"* and
 *"Section Index of subpages from selected pages"* both build a list of pages and
