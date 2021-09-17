@@ -8,7 +8,7 @@ Developer Corner
 ================
 
 .. toctree::
-	:maxdepth: 5
-	:titlesonly:
+   :maxdepth: 5
+   :titlesonly:
 
-	TCA/Index
+   TCA/Index
