@@ -23,6 +23,20 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 class FragmentIdentifierProcessor implements DataProcessorInterface
 {
     /**
+     * @var ConfigurationManagerInterface
+     */
+    protected $configurationManager;
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
+     */
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
+    {
+        $this->configurationManager = $configurationManager;
+        $this->typoScriptSetup = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
+    }
+
+    /**
      * @param ContentObjectRenderer $cObj The data of the content element or page
      * @param array $contentObjectConfiguration The configuration of Content Object
      * @param array $processorConfiguration The configuration of this processor
@@ -40,9 +54,7 @@ class FragmentIdentifierProcessor implements DataProcessorInterface
             return $processedData;
         }
 
-        $objectManager = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
-        $configurationManager = $objectManager->get(ConfigurationManagerInterface::class);
-        $settings = $configurationManager->getConfiguration(
+        $settings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
         );
 

@@ -25,6 +25,20 @@ use TYPO3\CMS\Frontend\ContentObject\TypolinkModifyLinkConfigForPageLinksHookInt
 class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterface
 {
     /**
+     * @var ConfigurationManagerInterface
+     */
+    protected $configurationManager;
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
+     */
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
+    {
+        $this->configurationManager = $configurationManager;
+        $this->typoScriptSetup = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
+    }
+
+    /**
      * @param array $linkConfiguration The link configuration (for options see TSRef -> typolink)
      * @param array $linkDetails Additional information for the link
      * @param array $pageRow The complete page row for the page to link to
@@ -34,9 +48,7 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
     {
         if (isset($linkDetails['fragment']) && is_numeric($linkDetails['fragment'])) {
             // 1. Get TypoScript configuration:
-            $objectManager = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
-            $configurationManager = $objectManager->get(ConfigurationManagerInterface::class);
-            $settings = $configurationManager->getConfiguration(
+            $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
             );
             $replaceFragmentInPageLinks = $settings['plugin.']['tx_contentslug.']['settings.']['replaceFragmentInPageLinks'];
