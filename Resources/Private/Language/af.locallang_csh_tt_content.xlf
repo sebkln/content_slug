@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2020-02-23T18:12:17Z" product-name="content_slug" target-language="af">
+    <header/>
+    <body>
+      <trans-unit id="tx_content_slug_fragment.alttitle">
+        <source>Human-readable URL #anchor</source>
+        <target state="needs-translation">Human-readable URL #anchor</target>
+      </trans-unit>
+      <trans-unit id="tx_content_slug_fragment.description" resname="tx_content_slug_fragment.description">
+        <source>Creates an HTML anchor link to the header/content element, e.g. "#section-of-interest". The number sign (&lt;code&gt;#&lt;/code&gt;) will be set on the website by the system.</source>
+        <target state="needs-translation">Creates an HTML anchor link to the header/content element, e.g. "#section-of-interest". The number sign (&lt;code&gt;#&lt;/code&gt;) will be set on the website by the system.</target>
+      </trans-unit>
+      <trans-unit id="tx_content_slug_fragment.details" xml:space="preserve">
+            <source>These anchors will be used for example by the "Section index" content elements, if available. They can help to improve the readability of a URL.
+By default (if no anchor is given), the unique id (integer) of the content element is used there, e.g. "#c123".
+
+&lt;strong&gt;Example for a URL with a human-readable anchor:&lt;/strong&gt;
+&lt;em&gt;https://domain.com/some-page/#section-of-interest&lt;/em&gt;
+
+An anchor can only contain certain characters. If you use non-supported characters, these will be removed or replaced when the content element is saved.
+&lt;strong&gt;All anchors on the same page have to be unique.&lt;/strong&gt; If another content element already has the same anchor, your new anchor will be automatically extended with a number.</source>
+         <target state="needs-translation">These anchors will be used for example by the "Section index" content elements, if available. They can help to improve the readability of a URL.
+By default (if no anchor is given), the unique id (integer) of the content element is used there, e.g. "#c123".
+
+&lt;strong&gt;Example for a URL with a human-readable anchor:&lt;/strong&gt;
+&lt;em&gt;https://domain.com/some-page/#section-of-interest&lt;/em&gt;
+
+An anchor can only contain certain characters. If you use non-supported characters, these will be removed or replaced when the content element is saved.
+&lt;strong&gt;All anchors on the same page have to be unique.&lt;/strong&gt; If another content element already has the same anchor, your new anchor will be automatically extended with a number.</target></trans-unit>
+      <trans-unit id="tx_content_slug_fragment.syntax" resname="tx_content_slug_fragment.syntax">
+        <source>&lt;p&gt;You can use the following characters in this field:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ASCII characters (&lt;code&gt;a–z&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;digits (&lt;code&gt;0–9&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;underscores (&lt;code&gt;_&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;hyphens (&lt;code&gt;-&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;periods (&lt;code&gt;.&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When the content element is saved …&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;… all characters are converted to lowercase.&lt;br&gt;
+… HTML elements are removed completely.&lt;br&gt;
+… space characters are converted to the hyphen character.&lt;br&gt;
+… special characters (e.g. &lt;code&gt;äöüß€&lt;/code&gt;) are converted to ASCII equivalents.&lt;/p&gt;
+				</source>
+        <target state="needs-translation">&lt;p&gt;You can use the following characters in this field:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ASCII characters (&lt;code&gt;a–z&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;digits (&lt;code&gt;0–9&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;underscores (&lt;code&gt;_&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;hyphens (&lt;code&gt;-&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;periods (&lt;code&gt;.&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When the content element is saved …&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;… all characters are converted to lowercase.&lt;br&gt;
+… HTML elements are removed completely.&lt;br&gt;
+… space characters are converted to the hyphen character.&lt;br&gt;
+… special characters (e.g. &lt;code&gt;äöüß€&lt;/code&gt;) are converted to ASCII equivalents.&lt;/p&gt;
+				</target>
+      </trans-unit>
+      <trans-unit id="tx_content_slug_link.description" resname="tx_content_slug_link.description">
+        <source>Adds a link next to the header that contains the anchor.</source>
+        <target state="needs-translation">Adds a link next to the header that contains the anchor.</target>
+      </trans-unit>
+      <trans-unit id="tx_content_slug_link.details" xml:space="preserve">
+				<source>This anchor link can be used to navigate to the current text section on the web page:
+
+When the link is clicked, the browser will jump directly to the header.
+The anchor is added to the current URL.
+
+This also enables the user to share the direct link to the desired text section.</source>
+			<target state="needs-translation">This anchor link can be used to navigate to the current text section on the web page:
+
+When the link is clicked, the browser will jump directly to the header.
+The anchor is added to the current URL.
+
+This also enables the user to share the direct link to the desired text section.</target></trans-unit>
+    </body>
+  </file>
+</xliff>
