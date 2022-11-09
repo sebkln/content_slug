@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2020-02-23T18:12:17Z" product-name="content_slug" target-language="sv-SE">
+    <header/>
+    <body>
+      <trans-unit id="tt_content.tx_content_slug_fragment">
+        <source>Human-readable URL #anchor</source>
+        <target state="needs-translation">Human-readable URL #anchor</target>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_content_slug_fragment.generateFromHeader">
+        <source>Generate anchor from header</source>
+        <target state="needs-translation">Generate anchor from header</target>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_content_slug_link">
+        <source>Set link to #anchor</source>
+        <target state="needs-translation">Set link to #anchor</target>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_content_slug_link.check">
+        <source>Activate</source>
+        <target state="needs-translation">Activate</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
