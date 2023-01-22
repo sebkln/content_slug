@@ -52,7 +52,7 @@ An editor can activate these with a checkbox for individual content elements.
 
 ## Compatibility
 
-TYPO3 10.4.0 - 11.5.99
+TYPO3 11.5.0 - 12.4.99
 
 
 ## Installation
