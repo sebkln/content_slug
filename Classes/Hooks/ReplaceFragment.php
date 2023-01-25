@@ -64,8 +64,8 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
                             $queryBuilder->createNamedParameter($contentId, \PDO::PARAM_INT)
                         )
                     )
-                    ->execute()
-                    ->fetch();
+                    ->executeQuery()
+                    ->fetchAssociative();
 
                 // 4. Process the new fragment:
                 if (!empty($queryResult['tx_content_slug_fragment']) && ((int)$queryResult['header_layout'] !== 100)) {
