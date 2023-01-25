@@ -1,4 +1,5 @@
 <?php
+
 namespace Sebkln\ContentSlug\DataProcessing;
 
 /*
@@ -10,7 +11,6 @@ namespace Sebkln\ContentSlug\DataProcessing;
  * LICENSE file that was distributed with this source code.
  */
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -22,15 +22,9 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
  */
 class FragmentIdentifierProcessor implements DataProcessorInterface
 {
-    /**
-     * @var ConfigurationManagerInterface
-     */
-    protected $configurationManager;
+    protected ConfigurationManagerInterface $configurationManager;
 
-    /**
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     */
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
     {
         $this->configurationManager = $configurationManager;
         $this->typoScriptSetup = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
@@ -48,9 +42,9 @@ class FragmentIdentifierProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
+    ): array {
         // Don't set a custom fragment for hidden headers:
-        if ($processedData['data']['header_layout'] == 100 || empty($processedData['data']['tx_content_slug_fragment'])) {
+        if ((int)$processedData['data']['header_layout'] === 100 || empty($processedData['data']['tx_content_slug_fragment'])) {
             return $processedData;
         }
 

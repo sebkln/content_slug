@@ -1,4 +1,5 @@
 <?php
+
 namespace Sebkln\ContentSlug\Hooks;
 
 /*
@@ -10,6 +11,7 @@ namespace Sebkln\ContentSlug\Hooks;
  * LICENSE file that was distributed with this source code.
  */
 
+use Doctrine\DBAL\Exception as DBALException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -24,15 +26,9 @@ use TYPO3\CMS\Frontend\ContentObject\TypolinkModifyLinkConfigForPageLinksHookInt
  */
 class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterface
 {
-    /**
-     * @var ConfigurationManagerInterface
-     */
-    protected $configurationManager;
+    protected ConfigurationManagerInterface $configurationManager;
 
-    /**
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager
-     */
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
     {
         $this->configurationManager = $configurationManager;
         $this->typoScriptSetup = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
@@ -43,6 +39,7 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
      * @param array $linkDetails Additional information for the link
      * @param array $pageRow The complete page row for the page to link to
      * @return array The modified $linkConfiguration
+     * @throws DBALException
      */
     public function modifyPageLinkConfiguration(array $linkConfiguration, array $linkDetails, array $pageRow): array
     {

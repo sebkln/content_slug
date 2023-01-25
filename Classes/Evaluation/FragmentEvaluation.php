@@ -1,4 +1,5 @@
 <?php
+
 namespace Sebkln\ContentSlug\Evaluation;
 
 /*
@@ -18,7 +19,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class FragmentEvaluation
 {
-
     /**
      * JavaScript code for client side validation/evaluation.
      * This function is called when the blur event is fired (the field has lost focus).
@@ -114,10 +114,9 @@ class FragmentEvaluation
      * @param string $value The field value to be evaluated
      * @return string Evaluated field value
      */
-    public function evaluateFieldValue($value)
+    public function evaluateFieldValue(string $value): string
     {
-        $value = $this->sanitizeFragment($value);
-        return $value;
+        return $this->sanitizeFragment($value);
     }
 
     /**
@@ -127,13 +126,13 @@ class FragmentEvaluation
      * @param array $parameters Array with key 'value' containing the field value from the database
      * @return string Evaluated field value
      */
-    public function deevaluateFieldValue(array $parameters)
+    public function deevaluateFieldValue(array $parameters): string
     {
         return $parameters['value'];
     }
 
     /**
-     * Cleans a slug value so it can be used as an achor in a URL.
+     * Cleans a slug value, so it can be used as an anchor in the URL.
      * This is a reduced and adapted version of the SlugHelper sanitize method.
      *
      * Admissible characters for HTML id attributes / fragment identifiers are:
@@ -153,7 +152,7 @@ class FragmentEvaluation
         $slug = strip_tags($slug);
 
         // Convert space characters to the hyphen character:
-        $fallbackCharacter = ('-');
+        $fallbackCharacter = '-';
         $slug = preg_replace('/[ \t\x{00A0}]+/u', $fallbackCharacter, $slug);
 
         // Convert extended letters to ASCII equivalents.
@@ -164,9 +163,7 @@ class FragmentEvaluation
         $slug = preg_replace('/[^\p{L}\p{M}0-9\-_.' . preg_quote($fallbackCharacter) . ']/u', '', $slug);
 
         // Convert multiple fallback characters to a single one:
-        if ($fallbackCharacter !== '') {
-            $slug = preg_replace('/' . preg_quote($fallbackCharacter) . '{2,}/', $fallbackCharacter, $slug);
-        }
+        $slug = preg_replace('/' . preg_quote($fallbackCharacter) . '{2,}/', $fallbackCharacter, $slug);
 
         // Ensure slug is lower cased after all replacement was done:
         $slug = mb_strtolower($slug, 'utf-8');

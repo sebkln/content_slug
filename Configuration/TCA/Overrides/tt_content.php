@@ -1,5 +1,7 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') or die();
 
 // Configure the new field:
@@ -33,10 +35,10 @@ $fields = array(
 );
 
 // Add the new fields to an existing table definition:
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $fields);
+ExtensionManagementUtility::addTCAcolumns('tt_content', $fields);
 
 // Add the new fields to an existing palette:
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+ExtensionManagementUtility::addFieldsToPalette(
     'tt_content', // Table for TYPO3 content elements
     'headers', // Existing palette for header related fields
     '--linebreak--, tx_content_slug_fragment, tx_content_slug_link', // The new fields, rendered in a new line
