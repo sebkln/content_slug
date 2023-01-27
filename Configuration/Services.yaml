@@ -7,3 +7,7 @@ services:
   Sebkln\ContentSlug\:
     resource: '../Classes/*'
     exclude: '../Classes/{Evaluation,FormEngine}'
+  Sebkln\ContentSlug\Listener\ModifyFragment:
+    tags:
+      - name: event.listener
+        identifier: 'content-slug/frontend/modify-fragment'
