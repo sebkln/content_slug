@@ -14,6 +14,8 @@ namespace Sebkln\ContentSlug\FormEngine\FieldControl;
  */
 
 use TYPO3\CMS\Backend\Form\AbstractNode;
+use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 
 /**
  * Class GenerateFragmentFromHeaderControl
@@ -38,8 +40,18 @@ class GenerateFragmentFromHeaderControl extends AbstractNode
                 'class' => 'btn-fragment ', // Button class can be selected in JavaScript.
                 'data-uid' => $this->data['databaseRow']['uid'] // Fills the data-uid attribute with the uid of the current content element.
             ],
-            'requireJsModules' => ['TYPO3/CMS/ContentSlug/FillFragment'],
         ];
+
+        if ((new Typo3Version())->getMajorVersion() < 12) {
+            $result['requireJsModules'] = ['TYPO3/CMS/ContentSlug/FillFragment'];
+        } else {
+            $result['javaScriptModules'] = [
+                JavaScriptModuleInstruction::forRequireJS(
+                    'TYPO3/CMS/ContentSlug/FillFragment'
+                ),
+            ];
+        }
+
         return $result;
     }
 }

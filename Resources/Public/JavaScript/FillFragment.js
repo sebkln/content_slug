@@ -1,18 +1,18 @@
 /**
  * Module: TYPO3/CMS/ContentSlug/FillFragment
  */
-define(['TYPO3/CMS/Backend/FormEngine'], function (FormEngine) {
+define([], function () {
   'use strict';
 
-  var FillFragment = {};
+  let FillFragment = {};
 
   /**
    * When the 'Generate anchor' button is clicked, the anchor/fragment field gets filled with the current content of the header field.
    * The 'FragmentEvaluation' function is used for an immediate evaluation of the fragment.
-   * 'fieldChanged()' is needed to successfully save the changes to the database. It also triggers the 'Unsaved changes' modal for this field.
+   * 'change' event is needed to successfully save the changes to the database. It also triggers the 'Unsaved changes' modal for this field.
    */
   FillFragment.initializeEvents = function () {
-    var fragmentBtn = document.querySelector('.btn-fragment'),
+    const fragmentBtn = document.querySelector('.btn-fragment'),
         elemId = fragmentBtn.dataset.uid,
         headerField = document.querySelector('[data-formengine-input-name="data[tt_content][' + elemId + '][header]"]'),
         fragmentField = document.querySelector('[data-formengine-input-name="data[tt_content][' + elemId + '][tx_content_slug_fragment]"]');
@@ -24,7 +24,7 @@ define(['TYPO3/CMS/Backend/FormEngine'], function (FormEngine) {
     });
   };
 
-  $(FillFragment.initializeEvents);
+  FillFragment.initializeEvents();
 
   return FillFragment;
 });
