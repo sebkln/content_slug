@@ -70,7 +70,7 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
                     ->fetchAssociative();
 
                 // 4. Process the new fragment:
-                if (!empty($queryResult['tx_content_slug_fragment']) && ((int)$queryResult['header_layout'] !== 100)) {
+                if ((int)$queryResult['header_layout'] !== 100) {
                     $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
                     $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
 
@@ -84,6 +84,7 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
                 }
             }
         }
+
         return $linkConfiguration;
     }
 }

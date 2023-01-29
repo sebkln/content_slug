@@ -44,7 +44,7 @@ class FragmentIdentifierProcessor implements DataProcessorInterface
         array $processedData
     ): array {
         // Don't set a custom fragment for hidden headers:
-        if ((int)$processedData['data']['header_layout'] === 100 || empty($processedData['data']['tx_content_slug_fragment'])) {
+        if ((int)$processedData['data']['header_layout'] === 100) {
             return $processedData;
         }
 
