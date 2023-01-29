@@ -76,7 +76,10 @@ class ModifyFragment
                     $recordContentObjectRenderer->start($queryResult, 'tt_content');
                     $recordContentObjectRenderer->setCurrentVal((string)$contentId);
                     $newFragment = $recordContentObjectRenderer->cObjGetSingle($fragmentcObj, $fragmentConf, 'newFragment');
-                    $event->setFragment($newFragment);
+
+                    if ($newFragment !== '') {
+                        $event->setFragment($newFragment);
+                    }
                 }
             }
         }
