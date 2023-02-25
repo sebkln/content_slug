@@ -50,7 +50,7 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
             );
-            $replaceFragmentInPageLinks = $settings['plugin.']['tx_contentslug.']['settings.']['replaceFragmentInPageLinks'];
+            $replaceFragmentInPageLinks = $settings['plugin.']['tx_contentslug.']['settings.']['replaceFragmentInPageLinks'] ?? 0;
 
             // 2. Check if the hook should be used:
             if ((int)$replaceFragmentInPageLinks === 1) {
