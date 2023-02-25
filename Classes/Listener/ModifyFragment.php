@@ -67,7 +67,7 @@ class ModifyFragment
                     ->fetchAssociative();
 
                 // 4. Process the new fragment:
-                if ((int)$queryResult['header_layout'] !== 100) {
+                if (is_array($queryResult) && (int)$queryResult['header_layout'] !== 100) {
                     $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
                     $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
 
