@@ -33,7 +33,6 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
     public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
     {
         $this->configurationManager = $configurationManager;
-        $this->typoScriptSetup = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
     }
 
     /**
