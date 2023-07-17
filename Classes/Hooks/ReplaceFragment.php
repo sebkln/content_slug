@@ -11,9 +11,7 @@ namespace Sebkln\ContentSlug\Hooks;
  * LICENSE file that was distributed with this source code.
  */
 
-use Doctrine\DBAL\Exception as DBALException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Frontend\ContentObject\TypolinkModifyLinkConfigForPageLinksHookInterface;
@@ -40,7 +38,6 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
      * @param array $linkDetails Additional information for the link
      * @param array $pageRow The complete page row for the page to link to
      * @return array The modified $linkConfiguration
-     * @throws DBALException
      */
     public function modifyPageLinkConfiguration(array $linkConfiguration, array $linkDetails, array $pageRow): array
     {
@@ -53,30 +50,24 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
 
             // 2. Check if the hook should be used:
             if ((int)$replaceFragmentInPageLinks === 1) {
-                // 3. Get data array of the linked content element:
-                $contentId = $linkDetails['fragment'];
-                $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
-                $queryResult = $queryBuilder
-                    ->select('*')
-                    ->from('tt_content')
-                    ->where(
-                        $queryBuilder->expr()->eq(
-                            'uid',
-                            $queryBuilder->createNamedParameter($contentId, \PDO::PARAM_INT)
-                        )
-                    )
-                    ->executeQuery()
-                    ->fetchAssociative();
+                // 3. Get localized data array of the linked content element using "ContentObjectRenderer->getRecords()":
+                $queryConfiguration = [
+                    'uidInList' => $linkDetails['fragment'],
+                    'pidInList' => 0,
+                    'languageField' => 'sys_language_uid',
+                    'max' => 1,
+                ];
+
+                /** @var ContentObjectRenderer $recordContentObjectRenderer */
+                $recordContentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+                $record = current($recordContentObjectRenderer->getRecords('tt_content', $queryConfiguration));
 
                 // 4. Process the new fragment:
-                if (is_array($queryResult) && (int)$queryResult['header_layout'] !== 100) {
-                    $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
-                    $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
+                $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
+                $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
 
-                    /** @var ContentObjectRenderer $recordContentObjectRenderer */
-                    $recordContentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class);
-                    $recordContentObjectRenderer->start($queryResult, 'tt_content');
-                    $recordContentObjectRenderer->setCurrentVal((string)$contentId);
+                if (is_array($record) && (int)$record['header_layout'] !== 100) {
+                    $recordContentObjectRenderer->start($record, 'tt_content');
                     $newFragment = $recordContentObjectRenderer->cObjGetSingle($fragmentcObj, $fragmentConf, 'newFragment');
 
                     $linkConfiguration['section.']['override'] = $newFragment;
