@@ -23,6 +23,15 @@ ChangeLog
 
    If a version contains new features or important changes, I'll write a blog post about it (available in English and German):
 
+   July 29, 2023: `"Speaking URL fragments" 3.1.0 and 2.2.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-v3-1-0/>`__
+      Bugfix: Correct translation of human-readable anchors in the RTE / Backend JavaScript adjustments.
+
+   February 25, 2023: `"Speaking URL fragments" 3.0.1 and 2.1.1 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-v3-0-1/>`__
+      Bugfixes: Check for existence of linked content element / Check for configuration in multi-domain setup.
+
+   January 29, 2023: `"Speaking URL fragments" 3.0.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-v3-0-0/>`__
+      New: TYPO3 v12 support. Allows using the content element's header as a fallback (or the primary source) for human-readable fragments.
+
    May 14, 2021: `"Speaking URL fragments" 2.0.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-v2-0-0/>`__
       New: Central TypoScript configuration of the URL fragment, as well as the support of links in the RTE (and TCA fields).
 
