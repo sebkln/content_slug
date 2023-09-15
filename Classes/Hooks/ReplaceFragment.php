@@ -41,7 +41,7 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
      */
     public function modifyPageLinkConfiguration(array $linkConfiguration, array $linkDetails, array $pageRow): array
     {
-        if (isset($linkDetails['fragment']) && is_numeric($linkDetails['fragment'])) {
+        if ($GLOBALS['TSFE'] && isset($linkDetails['fragment']) && is_numeric($linkDetails['fragment'])) {
             // 1. Get TypoScript configuration:
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
