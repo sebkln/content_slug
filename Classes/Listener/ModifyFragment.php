@@ -40,7 +40,7 @@ class ModifyFragment
         $fragment = $event->getFragment();
         $fragment = substr($fragment, 1);
 
-        if (!empty($fragment) && is_numeric($fragment)) {
+        if ($GLOBALS['TSFE'] && !empty($fragment) && is_numeric($fragment)) {
             // 1. Get TypoScript configuration:
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
