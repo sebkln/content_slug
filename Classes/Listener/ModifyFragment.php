@@ -12,6 +12,7 @@ namespace Sebkln\ContentSlug\Listener;
  */
 
 use Doctrine\DBAL\Exception;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -40,7 +41,7 @@ class ModifyFragment
         $fragment = $event->getFragment();
         $fragment = substr($fragment, 1);
 
-        if (!empty($fragment) && is_numeric($fragment)) {
+        if ((($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface) && !empty($fragment) && is_numeric($fragment)) {
             // 1. Get TypoScript configuration:
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT

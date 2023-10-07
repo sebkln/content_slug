@@ -11,6 +11,7 @@ namespace Sebkln\ContentSlug\Hooks;
  * LICENSE file that was distributed with this source code.
  */
 
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -41,7 +42,7 @@ class ReplaceFragment implements TypolinkModifyLinkConfigForPageLinksHookInterfa
      */
     public function modifyPageLinkConfiguration(array $linkConfiguration, array $linkDetails, array $pageRow): array
     {
-        if (isset($linkDetails['fragment']) && is_numeric($linkDetails['fragment'])) {
+        if ((($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface) && isset($linkDetails['fragment']) && is_numeric($linkDetails['fragment'])) {
             // 1. Get TypoScript configuration:
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
