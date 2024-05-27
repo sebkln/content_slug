@@ -28,7 +28,7 @@ class FragmentEvaluation
      */
     public function returnFieldJS(): JavaScriptModuleInstruction
     {
-        return JavaScriptModuleInstruction::forRequireJS('TYPO3/CMS/ContentSlug/FragmentEvaluation');
+        return JavaScriptModuleInstruction::create('@sebkln/content-slug/FragmentEvaluation.js');
     }
 
     /**
