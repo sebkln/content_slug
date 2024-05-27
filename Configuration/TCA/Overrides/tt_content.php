@@ -28,7 +28,10 @@ $fields = array(
         'config' => [
             'type' => 'check',
             'items' => [
-                ['LLL:EXT:content_slug/Resources/Private/Language/locallang_db.xlf:tt_content.tx_content_slug_link.check', ''],
+                [
+                    'label' => 'LLL:EXT:content_slug/Resources/Private/Language/locallang_db.xlf:tt_content.tx_content_slug_link.check',
+                    'value' => ''
+                ],
             ],
         ],
     ]
