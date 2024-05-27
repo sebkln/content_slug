@@ -142,7 +142,7 @@ and allows to configure the complete URL fragment at a central place.
 
    #. The custom DataProcessor :php:`FragmentIdentifierProcessor`, which will
       process the URL fragments for the "Section Index" content elements.
-   #. The :php:`replaceFragment` hook, which allows to overwrite fragments for
+   #. The :php:`ModifyFragment` event listener, which allows to overwrite fragments for
       links set in the rich text editor or in TCA fields with renderType
       :php:`inputLink`.
 
