@@ -6,7 +6,7 @@ plugin.tx_contentslug {
         # cat=plugin.tx_contentslug/basic/2; type=boolean; label=Append a string to URL fragment: If activated, the current UID is added at the end of the URL fragment.
         renderSuffix = 0
 
-        # cat=plugin.tx_contentslug/enable/1; type=boolean; label=When activated, fragment links in the RTE and in TCA fields of type 'inputLink' are replaced with the human-readable fragment identifier.
+        # cat=plugin.tx_contentslug/enable/1; type=boolean; label=Replace fragment in page links: When activated, fragment links in the RTE and in TCA fields of type 'inputLink' are replaced with the human-readable fragment identifier.
         replaceFragmentInPageLinks = 1
     }
 }
