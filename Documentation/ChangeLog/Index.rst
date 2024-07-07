@@ -23,6 +23,9 @@ ChangeLog
 
    If a version contains new features or important changes, I'll write a blog post about it (available in English and German):
 
+   July 7, 2024: `"Speaking URL fragments" 4.0.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-4-0-0/>`__
+      New: Support of TYPO3 v13 and Site Sets. Migration from RequireJS to ES6 modules.
+
    July 29, 2023: `"Speaking URL fragments" 3.1.0 and 2.2.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-v3-1-0/>`__
       Bugfix: Correct translation of human-readable anchors in the RTE / Backend JavaScript adjustments.
 
