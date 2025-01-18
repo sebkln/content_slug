@@ -1,16 +1,26 @@
+categories:
+  contentslug:
+    label: 'Speaking URL fragments (anchors)'
+  contentslug.settings:
+    label: 'Settings'
+    parent: contentslug
+
 settings:
   plugin.tx_contentslug.settings.renderPrefix:
     default: true
     label: 'Prepend a string to URL fragment'
     type: bool
     description: 'By default, a prefix with the current UID is added to the fragment identifier. This should avoid matching some template related ids (e.g. "#site-header").'
+    category: contentslug.settings
   plugin.tx_contentslug.settings.renderSuffix:
     default: false
     label: 'Append a string to URL fragment'
     type: bool
     description: 'If activated, the current UID is added at the end of the URL fragment.'
+    category: contentslug.settings
   plugin.tx_contentslug.settings.replaceFragmentInPageLinks:
     default: true
     label: 'Replace fragment in page links'
     type: bool
     description: 'When activated, fragment links in the RTE and in TCA fields of type "inputLink" are replaced with the human-readable fragment identifier.'
+    category: contentslug.settings
