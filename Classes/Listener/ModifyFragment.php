@@ -66,7 +66,7 @@ class ModifyFragment
                 $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
 
                 // 4. Process the new fragment:
-                if (is_array($record) && (int)$record['header_layout'] !== 100) {
+                if (is_array($record)) {
 
                     $recordContentObjectRenderer->start($record, 'tt_content');
                     $newFragment = $recordContentObjectRenderer->cObjGetSingle($fragmentcObj, $fragmentConf, 'newFragment');
