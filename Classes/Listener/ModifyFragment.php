@@ -47,6 +47,7 @@ class ModifyFragment
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
             );
             $replaceFragmentInPageLinks = $settings['plugin.']['tx_contentslug.']['settings.']['replaceFragmentInPageLinks'] ?? 0;
+            $checkForHiddenHeaders = $settings['plugin.']['tx_contentslug.']['settings.']['checkForHiddenHeaders'] ?? true;
 
             // 2. Check if fragment should be replaced:
             if ((int)$replaceFragmentInPageLinks === 1) {
@@ -62,17 +63,17 @@ class ModifyFragment
                 $recordContentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class);
                 $record = current($recordContentObjectRenderer->getRecords('tt_content', $queryConfiguration));
 
-                $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
-                $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
+                if (is_array($record)) {
+                    // 4. Process the new fragment:
+                    if (!$checkForHiddenHeaders || (int)$record['header_layout'] !== 100) {
+                        $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
+                        $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
+                        $recordContentObjectRenderer->start($record, 'tt_content');
+                        $newFragment = $recordContentObjectRenderer->cObjGetSingle($fragmentcObj, $fragmentConf, 'newFragment');
 
-                // 4. Process the new fragment:
-                if (is_array($record) && (int)$record['header_layout'] !== 100) {
-
-                    $recordContentObjectRenderer->start($record, 'tt_content');
-                    $newFragment = $recordContentObjectRenderer->cObjGetSingle($fragmentcObj, $fragmentConf, 'newFragment');
-
-                    if ($newFragment !== '') {
-                        $event->setFragment($newFragment);
+                        if ($newFragment !== '') {
+                            $event->setFragment($newFragment);
+                        }
                     }
                 }
             }

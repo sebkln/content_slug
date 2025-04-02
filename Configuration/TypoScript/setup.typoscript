@@ -1,6 +1,7 @@
 plugin.tx_contentslug {
     settings {
         replaceFragmentInPageLinks = {$plugin.tx_contentslug.settings.replaceFragmentInPageLinks}
+        checkForHiddenHeaders = {$plugin.tx_contentslug.settings.checkForHiddenHeaders}
     }
 
     urlFragmentPrefix = TEXT

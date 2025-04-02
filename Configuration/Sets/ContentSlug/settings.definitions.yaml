@@ -4,6 +4,9 @@ categories:
   contentslug.settings:
     label: 'Settings'
     parent: contentslug
+  contentslug.settingsAdvanced:
+    label: 'Advanced settings'
+    parent: contentslug
 
 settings:
   plugin.tx_contentslug.settings.renderPrefix:
@@ -24,3 +27,9 @@ settings:
     type: bool
     description: 'When activated, fragment links in the RTE and in TCA fields of type "inputLink" are replaced with the human-readable fragment identifier.'
     category: contentslug.settings
+  plugin.tx_contentslug.settings.checkForHiddenHeaders:
+    default: true
+    label: 'Check for hidden headers'
+    type: bool
+    description: 'If disabled, fragment links are replaced even if the content element`s header is hidden. Use this with care! Check the manual for details.'
+    category: contentslug.settingsAdvanced

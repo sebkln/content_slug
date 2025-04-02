@@ -24,6 +24,7 @@ Configure prefix and suffix
    urlFragmentPrefix_          :ref:`Content Object (cObject) <data-type-cobject>` *TEXT cObject with current UID*
    urlFragmentSuffix_          :ref:`Content Object (cObject) <data-type-cobject>` *TEXT cObject with current UID*
    replaceFragmentInPageLinks_ :ref:`t3tsref:data-type-boolean`                    1
+   checkForHiddenHeaders_      :ref:`t3tsref:data-type-boolean`                    1
    =========================== =================================================== ================================
 
 
@@ -126,7 +127,48 @@ settings.replaceFragmentInPageLinks
       When activated, fragment links set in the RTE or TCA fields of type
       :php:`inputLink` are replaced with the human-readable fragment identifier.
    Default
-      :typoscript:`1` (per TypoScript constant)
+      :typoscript:`1` (via TypoScript constant)
+
+
+.. _checkForHiddenHeaders:
+
+settings.checkForHiddenHeaders
+-----------------------------------
+.. container:: table-row
+
+   Property
+      settings.checkForHiddenHeaders
+   Data type
+      :ref:`t3tsref:data-type-boolean`
+   Description
+      By default, this extension renders the human-readable fragment as an `id` attribute
+      on the content element's header. Therefore, a given fragment will not be used
+      for content elements that have a hidden (non-rendered) header.
+
+      If you **disable** this setting, fragment links are replaced even if the content element's
+      header is hidden. You will then need to render this attribute on a different HTML tag.
+      You will also need to :ref:`hide the checkbox "Set link to #anchor"<user-permissions_>`,
+      or migrate the corresponding HTML markup as well.
+
+      Recommendation: add the `id` attribute to the Fluid layout of content elements.
+
+      ..  code-block:: html
+          :caption: EXT:site_package/Resources/Private/Layouts/ContentElements/Default.html
+
+          <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+              <f:if condition="{data._LOCALIZED_UID}">
+                  <a id="c{data._LOCALIZED_UID}"></a>
+              </f:if>
+
+              <!-- Add these lines: -->
+              <f:if condition="{fragmentIdentifier}">
+                  <div id="{fragmentIdentifier}"></div>
+              </f:if>
+
+              <!-- etc. -->
+          </div>
+   Default
+      :typoscript:`1` (via TypoScript constant)
 
 
 .. _fragmentIdentifierFluidVariable:

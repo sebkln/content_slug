@@ -1,12 +1,18 @@
+# customsubcategory=100=Settings
+# customsubcategory=110=Advanced settings
+
 plugin.tx_contentslug {
     settings {
-        # cat=plugin.tx_contentslug/basic/1; type=boolean; label=Prepend a string to URL fragment: By default, a prefix with the current UID is added to the fragment identifier. This should avoid matching some template related ids (e.g. '#site-header').
+        # cat=Speaking URL fragments/100/1; type=boolean; label=Prepend a string to URL fragment: By default, a prefix with the current UID is added to the fragment identifier. This should avoid matching some template related ids (e.g. '#site-header').
         renderPrefix = 1
 
-        # cat=plugin.tx_contentslug/basic/2; type=boolean; label=Append a string to URL fragment: If activated, the current UID is added at the end of the URL fragment.
+        # cat=Speaking URL fragments/100/2; type=boolean; label=Append a string to URL fragment: If activated, the current UID is added at the end of the URL fragment.
         renderSuffix = 0
 
-        # cat=plugin.tx_contentslug/enable/1; type=boolean; label=Replace fragment in page links: When activated, fragment links in the RTE and in TCA fields of type 'inputLink' are replaced with the human-readable fragment identifier.
+        # cat=Speaking URL fragments/100/3; type=boolean; label=Replace fragment in page links: When activated, fragment links in the RTE and in TCA fields of type 'inputLink' are replaced with the human-readable fragment identifier.
         replaceFragmentInPageLinks = 1
+
+        # cat=Speaking URL fragments/110/1; type=boolean; label=Check for hidden headers: If disabled, fragment links are replaced even if the content element`s header is hidden. Use this with care! Check the manual for details.
+        checkForHiddenHeaders = 1
     }
 }

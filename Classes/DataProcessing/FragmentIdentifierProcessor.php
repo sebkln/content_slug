@@ -42,14 +42,15 @@ class FragmentIdentifierProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        // Don't set a custom fragment for hidden headers:
-        if ((int)$processedData['data']['header_layout'] === 100) {
-            return $processedData;
-        }
-
         $settings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
         );
+
+        // Don't set a custom fragment for hidden headers, unless check is disabled:
+        $checkForHiddenHeaders = $settings['plugin.']['tx_contentslug.']['settings.']['checkForHiddenHeaders'] ?? true;
+        if ($checkForHiddenHeaders && (int)$processedData['data']['header_layout'] === 100) {
+            return $processedData;
+        }
 
         $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
         $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];

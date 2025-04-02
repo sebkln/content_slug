@@ -17,6 +17,7 @@ TypoScript Constants Reference
    settings.renderPrefix_               :ref:`t3tsref:data-type-boolean`      1
    settings.renderSuffix_               :ref:`t3tsref:data-type-boolean`      0
    settings.replaceFragmentInPageLinks_ :ref:`t3tsref:data-type-boolean`      1
+   settings.checkForHiddenHeaders_      :ref:`t3tsref:data-type-boolean`      1
    ==================================== ===================================== ========
 
 Property details
@@ -81,5 +82,22 @@ settings.replaceFragmentInPageLinks
    Description
       When activated, fragment links set in the RTE or TCA fields of type
       :php:`inputLink` are replaced with the human-readable fragment identifier.
+   Default
+      :typoscript:`1`
+
+.. _settings.checkForHiddenHeaders:
+
+settings.checkForHiddenHeaders
+-----------------------------------
+.. container:: table-row
+
+   Property
+      settings.checkForHiddenHeaders
+   Data type
+      boolean
+   Description
+      If disabled, fragment links are replaced even if the content element's
+      header is hidden. Use this with care!
+      See :ref:`TypoScript Setup Reference<checkForHiddenHeaders_>` for details.
    Default
       :typoscript:`1`
