@@ -23,6 +23,9 @@ ChangeLog
 
    If a version contains new features or important changes, I'll write a blog post about it (available in English and German):
 
+   April 13, 2025: `"Speaking URL fragments" 4.1.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-4-1-0/>`__
+      New: Allows to disable the check for hidden content element headers.
+
    July 7, 2024: `"Speaking URL fragments" 4.0.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-4-0-0/>`__
       New: Support of TYPO3 v13 and Site Sets. Migration from RequireJS to ES6 modules.
 
