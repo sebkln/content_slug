@@ -13,4 +13,5 @@ For editors
 
    Preface/Index
    Fields/Index
+   MassEditing/Index
    Syntax/Index

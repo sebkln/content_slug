@@ -14,16 +14,19 @@ define(
      * 'change' event is needed to successfully save the changes to the database. It also triggers the 'Unsaved changes' modal for this field.
      */
     FillFragment.initializeEvents = function () {
-      const fragmentBtn = document.querySelector('.btn-fragment'),
-        elemId = fragmentBtn.dataset.uid,
-        headerField = document.querySelector('[data-formengine-input-name="data[tt_content][' + elemId + '][header]"]'),
-        fragmentField = document.querySelector('[data-formengine-input-name="data[tt_content][' + elemId + '][tx_content_slug_fragment]"]');
+      const fragmentBtns = document.querySelectorAll('.btn-fragment');
 
-      fragmentBtn.addEventListener('click', function (evt) {
-        evt.preventDefault();
-        fragmentField.value = FragmentEvaluation.evaluateFragment(headerField.value);
-        fragmentField.dispatchEvent(new Event('change', {bubbles: true, cancelable: true}));
-      });
+        fragmentBtns.forEach(fragmentBtn => {
+          const elemId = fragmentBtn.dataset.uid,
+          headerField = document.querySelector('[data-formengine-input-name="data[tt_content][' + elemId + '][header]"]'),
+          fragmentField = document.querySelector('[data-formengine-input-name="data[tt_content][' + elemId + '][tx_content_slug_fragment]"]');
+
+          fragmentBtn.addEventListener('click', function (evt) {
+            evt.preventDefault();
+            fragmentField.value = FragmentEvaluation.evaluateFragment(headerField.value);
+            fragmentField.dispatchEvent(new Event('change', {bubbles: true, cancelable: true}));
+          });
+        })
     };
 
     FillFragment.initializeEvents();
