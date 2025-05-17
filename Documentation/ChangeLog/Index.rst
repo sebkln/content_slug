@@ -23,6 +23,9 @@ ChangeLog
 
    If a version contains new features or important changes, I'll write a blog post about it (available in English and German):
 
+   May 17, 2025: `"Speaking URL fragments" 4.2.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-4-2-0/>`__
+      New: Improved mass editing of human-readable anchors.
+
    April 13, 2025: `"Speaking URL fragments" 4.1.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-4-1-0/>`__
       New: Allows to disable the check for hidden content element headers.
 
