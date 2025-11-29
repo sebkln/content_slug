@@ -1,7 +1,7 @@
 {
 	"name": "sebkln/content-slug",
 	"type": "typo3-cms-extension",
-	"description": "Adds a slug field for human-readable anchors (\"domain.com/page/#my-section\") to TYPO3 content elements. By default, this anchor is rendered as the header's id attribute.",
+	"description": "Speaking URL fragments (anchors) - Adds a slug field for human-readable anchors (\"domain.com/page/#my-section\") to TYPO3 content elements. By default, this anchor is rendered as the header's id attribute.",
 	"license": [
 		"GPL-2.0-or-later"
 	],
