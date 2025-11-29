@@ -11,3 +11,6 @@ services:
     tags:
       - name: event.listener
         identifier: 'content-slug/frontend/modify-fragment'
+  Sebkln\ContentSlug\DataProcessing\FragmentIdentifierProcessor:
+    tags:
+      - { name: 'data.processor', identifier: 'fragment-identifier' }

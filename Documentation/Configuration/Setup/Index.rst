@@ -229,8 +229,8 @@ is needed.
 .. code-block:: typoscript
 
    // Process 'fragmentIdentifier' variable in section menus:
-   tt_content.menu_section.dataProcessing.10.dataProcessing.20.dataProcessing.5 = Sebkln\ContentSlug\DataProcessing\FragmentIdentifierProcessor
-   tt_content.menu_section_pages.dataProcessing.10.dataProcessing.20.dataProcessing.5 = Sebkln\ContentSlug\DataProcessing\FragmentIdentifierProcessor
+   tt_content.menu_section.dataProcessing.10.dataProcessing.20.dataProcessing.5 = fragment-identifier
+   tt_content.menu_section_pages.dataProcessing.10.dataProcessing.20.dataProcessing.5 = fragment-identifier
 
 
 .. _postUserFunc:
