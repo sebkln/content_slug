@@ -11,8 +11,8 @@ namespace Sebkln\ContentSlug\Listener;
  * LICENSE file that was distributed with this source code.
  */
 
-use Doctrine\DBAL\Exception;
 use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -33,15 +33,12 @@ class ModifyFragment
         $this->configurationManager = $configurationManager;
     }
 
-    /**
-     * @throws Exception
-     */
     public function __invoke(ModifyPageLinkConfigurationEvent $event): void
     {
         $fragment = $event->getFragment();
         $fragment = substr($fragment, 1);
 
-        if ((($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface) && !empty($fragment) && is_numeric($fragment)) {
+        if (is_numeric($fragment) && !empty($fragment) && $this->isFrontendRequest()) {
             // 1. Get TypoScript configuration:
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
@@ -78,5 +75,15 @@ class ModifyFragment
                 }
             }
         }
+    }
+
+    protected function isFrontendRequest(): bool
+    {
+        if (($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface
+            && ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()
+        ) {
+            return true;
+        }
+        return false;
     }
 }
