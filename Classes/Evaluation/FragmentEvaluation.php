@@ -11,6 +11,7 @@ namespace Sebkln\ContentSlug\Evaluation;
  * LICENSE file that was distributed with this source code.
  */
 
+use TYPO3\CMS\Core\Attribute\AsAllowedCallable;
 use TYPO3\CMS\Core\Charset\CharsetConverter;
 use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -68,6 +69,7 @@ class FragmentEvaluation
      * @param string $slug
      * @return string
      */
+    #[AsAllowedCallable]
     public function sanitizeFragment(string $slug): string
     {
         // Convert to lowercase and remove tags:
