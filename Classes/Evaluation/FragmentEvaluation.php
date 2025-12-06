@@ -56,7 +56,7 @@ class FragmentEvaluation
     }
 
     /**
-     * Cleans a slug value, so it can be used as an anchor in the URL.
+     * Cleans a fragment value, so it can be used as an anchor in the URL.
      * This is a reduced and adapted version of the SlugHelper sanitize method.
      *
      * Admissible characters for HTML id attributes / fragment identifiers are:
@@ -66,32 +66,32 @@ class FragmentEvaluation
      * - hyphens
      * - periods
      *
-     * @param string $slug
+     * @param string $fragment
      * @return string
      */
     #[AsAllowedCallable]
-    public function sanitizeFragment(string $slug): string
+    public function sanitizeFragment(string $fragment): string
     {
         // Convert to lowercase and remove tags:
-        $slug = mb_strtolower($slug, 'utf-8');
-        $slug = strip_tags($slug);
+        $fragment = mb_strtolower($fragment, 'utf-8');
+        $fragment = strip_tags($fragment);
 
         // Convert space characters to the hyphen character:
         $fallbackCharacter = '-';
-        $slug = preg_replace('/[ \t\x{00A0}]+/u', $fallbackCharacter, $slug);
+        $fragment = preg_replace('/[ \t\x{00A0}]+/u', $fallbackCharacter, $fragment);
 
         // Convert extended letters to ASCII equivalents, e.g. "€" to "EUR".
-        $slug = GeneralUtility::makeInstance(CharsetConverter::class)->utf8_char_mapping($slug);
+        $fragment = GeneralUtility::makeInstance(CharsetConverter::class)->utf8_char_mapping($fragment);
 
         // Keep only valid characters:
-        $slug = preg_replace('/[^\p{L}\p{M}0-9\-_.' . preg_quote($fallbackCharacter) . ']/u', '', $slug);
+        $fragment = preg_replace('/[^\p{L}\p{M}0-9\-_.' . preg_quote($fallbackCharacter) . ']/u', '', $fragment);
 
         // Convert multiple fallback characters to a single one:
-        $slug = preg_replace('/' . preg_quote($fallbackCharacter) . '{2,}/', $fallbackCharacter, $slug);
+        $fragment = preg_replace('/' . preg_quote($fallbackCharacter) . '{2,}/', $fallbackCharacter, $fragment);
 
-        // Ensure slug is lower cased after all replacement was done:
-        $slug = mb_strtolower($slug, 'utf-8');
+        // Ensure fragment is lower cased after all replacement was done:
+        $fragment = mb_strtolower($fragment, 'utf-8');
 
-        return $slug;
+        return $fragment;
     }
 }
