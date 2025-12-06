@@ -80,9 +80,8 @@ class FragmentEvaluation
         $fallbackCharacter = '-';
         $slug = preg_replace('/[ \t\x{00A0}]+/u', $fallbackCharacter, $slug);
 
-        // Convert extended letters to ASCII equivalents.
-        // The specCharsToASCII() converts "€" to "EUR".
-        $slug = GeneralUtility::makeInstance(CharsetConverter::class)->specCharsToASCII('utf-8', $slug);
+        // Convert extended letters to ASCII equivalents, e.g. "€" to "EUR".
+        $slug = GeneralUtility::makeInstance(CharsetConverter::class)->utf8_char_mapping($slug);
 
         // Keep only valid characters:
         $slug = preg_replace('/[^\p{L}\p{M}0-9\-_.' . preg_quote($fallbackCharacter) . ']/u', '', $slug);
