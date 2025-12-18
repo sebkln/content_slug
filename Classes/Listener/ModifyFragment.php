@@ -17,6 +17,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\Event\ModifyPageLinkConfigurationEvent;
+use TYPO3\CMS\Frontend\Page\PageInformation;
 
 /**
  * Replaces the default fragment (like "#c123") with the human-readable version, if given.
@@ -35,10 +36,13 @@ class ModifyFragment
 
     public function __invoke(ModifyPageLinkConfigurationEvent $event): void
     {
+        /** @var PageInformation $pageInformation */
+        $pageInformation = $GLOBALS['TYPO3_REQUEST']->getAttribute('frontend.page.information');
+
         $fragment = $event->getFragment();
         $fragment = substr($fragment, 1);
 
-        if (is_numeric($fragment) && !empty($fragment) && $this->isFrontendRequest()) {
+        if ($pageInformation?->getId() > 0 && is_numeric($fragment) && !empty($fragment) && $this->isFrontendRequest()) {
             // 1. Get TypoScript configuration:
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
