@@ -11,7 +11,6 @@ namespace Sebkln\ContentSlug\Listener;
  * LICENSE file that was distributed with this source code.
  */
 
-use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -38,7 +37,7 @@ class ModifyFragment
         $fragment = $event->getFragment();
         $fragment = substr($fragment, 1);
 
-        if (is_numeric($fragment) && !empty($fragment) && $this->isFrontendRequest()) {
+        if (is_numeric($fragment) && !empty($fragment) && $this->isFrontendRequest($event)) {
             // 1. Get TypoScript configuration:
             $settings = $this->configurationManager->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
@@ -58,6 +57,7 @@ class ModifyFragment
 
                 /** @var ContentObjectRenderer $recordContentObjectRenderer */
                 $recordContentObjectRenderer = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+                $recordContentObjectRenderer->setRequest($event->getRequest());
                 $record = current($recordContentObjectRenderer->getRecords('tt_content', $queryConfiguration));
 
                 if (is_array($record)) {
@@ -77,12 +77,22 @@ class ModifyFragment
         }
     }
 
-    protected function isFrontendRequest(): bool
+    /**
+     * The isFrontend() check is needed to exclude the Redirects backend module.
+     * The Page information check is necessary to exclude actual redirects containing fragments in the target,
+     * where the TypoScript setup is not available.
+     *
+     * @param ModifyPageLinkConfigurationEvent $event
+     * @return bool
+     */
+    protected function isFrontendRequest(ModifyPageLinkConfigurationEvent $event): bool
     {
-        if (($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface
-            && ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()
-        ) {
-            return true;
+        $request = $event->getRequest();
+        if (ApplicationType::fromRequest($request)->isFrontend()) {
+            $pageInformation = $request->getAttribute('frontend.page.information');
+            if ($pageInformation) {
+                return $pageInformation->getId() > 0;
+            }
         }
         return false;
     }
