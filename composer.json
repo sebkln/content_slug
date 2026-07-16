@@ -23,7 +23,7 @@
 		}
 	],
 	"require": {
-		"typo3/cms-core": "^12.4.41 || ^13.4.21 || ^14.0",
+		"typo3/cms-core": "^13.4.33 || ^14.3.5",
 		"ext-mbstring": "*"
 	},
 	"extra": {
