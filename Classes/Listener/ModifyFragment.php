@@ -13,7 +13,6 @@ namespace Sebkln\ContentSlug\Listener;
 
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\Event\ModifyPageLinkConfigurationEvent;
 
@@ -25,13 +24,6 @@ use TYPO3\CMS\Frontend\Event\ModifyPageLinkConfigurationEvent;
  */
 class ModifyFragment
 {
-    protected ConfigurationManagerInterface $configurationManager;
-
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
-    {
-        $this->configurationManager = $configurationManager;
-    }
-
     public function __invoke(ModifyPageLinkConfigurationEvent $event): void
     {
         $fragment = $event->getFragment();
@@ -39,11 +31,10 @@ class ModifyFragment
 
         if (is_numeric($fragment) && !empty($fragment) && $this->isFrontendRequest($event)) {
             // 1. Get TypoScript configuration:
-            $settings = $this->configurationManager->getConfiguration(
-                ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
-            );
-            $replaceFragmentInPageLinks = $settings['plugin.']['tx_contentslug.']['settings.']['replaceFragmentInPageLinks'] ?? 0;
-            $checkForHiddenHeaders = $settings['plugin.']['tx_contentslug.']['settings.']['checkForHiddenHeaders'] ?? true;
+            $request = $event->getRequest();
+            $typoScript = $request->getAttribute('frontend.typoscript')->getSetupArray();
+            $replaceFragmentInPageLinks = $typoScript['plugin.']['tx_contentslug.']['settings.']['replaceFragmentInPageLinks'] ?? 0;
+            $checkForHiddenHeaders = $typoScript['plugin.']['tx_contentslug.']['settings.']['checkForHiddenHeaders'] ?? true;
 
             // 2. Check if fragment should be replaced:
             if ((int)$replaceFragmentInPageLinks === 1) {
@@ -63,8 +54,8 @@ class ModifyFragment
                 if (is_array($record)) {
                     // 4. Process the new fragment:
                     if (!$checkForHiddenHeaders || (int)$record['header_layout'] !== 100) {
-                        $fragmentcObj = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
-                        $fragmentConf = $settings['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
+                        $fragmentcObj = $typoScript['lib.']['contentElement.']['variables.']['fragmentIdentifier'];
+                        $fragmentConf = $typoScript['lib.']['contentElement.']['variables.']['fragmentIdentifier.'];
                         $recordContentObjectRenderer->start($record, 'tt_content');
                         $newFragment = $recordContentObjectRenderer->cObjGetSingle($fragmentcObj, $fragmentConf, 'newFragment');
 
