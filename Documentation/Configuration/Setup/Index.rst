@@ -131,7 +131,7 @@ Any configuration needs to be prefixed with  :typoscript:`plugin.tx_contentslug.
 Assemble the :typoscript:`fragmentIdentifier` variable
 ======================================================
 
-This variable is available in all Fluid templates of EXT:fluid_styled_content
+This variable will be available in every content element template
 and allows to configure the complete URL fragment at a central place.
 
 .. attention::
@@ -146,12 +146,8 @@ and allows to configure the complete URL fragment at a central place.
 .. code-block:: typoscript
 
    lib.contentElement {
-       // Override default templates of fluid_styled_content:
-       partialRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Partials/
-       templateRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Templates/
-
-       // Build a complete fragment identifier with possible prefix and suffix:
        variables {
+           // Build a complete fragment identifier with possible prefix and suffix:
            fragmentIdentifier = COA
            fragmentIdentifier {
                if.isTrue.field = tx_content_slug_fragment

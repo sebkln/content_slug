@@ -16,6 +16,10 @@ Administrator Manual
       How to get and install this extension
       and what the next steps are.
 
+   .. card:: :ref:`admin-sets`
+
+      An overview of available Site sets / TypoScript sets and their intended purpose.
+
    .. card:: :ref:`admin-upgrade`
 
       Upgrade notes (breaking changes) for certain versions.
@@ -26,4 +30,5 @@ Administrator Manual
    :hidden:
 
    Installation/Index
+   Sets/Index
    Upgrade/Index

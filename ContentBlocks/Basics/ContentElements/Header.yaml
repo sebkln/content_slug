@@ -1,0 +1,39 @@
+# Extended header palette for content blocks (example).
+identifier: ContentSlug/Header
+fields:
+  -
+    identifier: header_palette
+    type: Palette
+    label: LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers
+    fields:
+      -
+        identifier: header
+        useExistingField: true
+      -
+        type: Linebreak
+      -
+        identifier: header_layout
+        useExistingField: true
+      -
+        identifier: header_position
+        useExistingField: true
+      -
+        type: Linebreak
+      -
+        identifier: header_link
+        useExistingField: true
+      -
+        type: Linebreak
+      -
+        identifier: tx_content_slug_fragment
+        useExistingField: true
+        type: Text
+      -
+        identifier: tx_content_slug_link
+        useExistingField: true
+        type: Checkbox
+      -
+        type: Linebreak
+      -
+        identifier: subheader
+        useExistingField: true

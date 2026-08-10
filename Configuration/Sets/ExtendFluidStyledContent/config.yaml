@@ -1,0 +1,6 @@
+# Site Set to extend Fluid Styled Content
+name: sebkln/content-slug-fsc
+label: Speaking URL fragments (for Fluid Styled Content)
+dependencies:
+  - typo3/fluid-styled-content
+  - sebkln/content-slug-basic

@@ -4,7 +4,7 @@
 Site Settings
 =============
 
-If you included the Site Set, the extension can be configured via Site Settings.
+If you included one of the Site sets, the extension can be configured via Site settings.
 
 .. confval-menu::
    :name: confval-site-settings

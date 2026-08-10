@@ -1,0 +1,5 @@
+# Site Set to extend custom-built Content Blocks
+name: sebkln/content-slug-cb
+label: Speaking URL fragments (for Content Blocks)
+dependencies:
+  - sebkln/content-slug-basic

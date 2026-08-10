@@ -1,4 +1,3 @@
-name: sebkln/content-slug
-label: Speaking URL fragments (anchors)
-dependencies:
-  - typo3/fluid-styled-content
+# Site Set to use with custom frontend rendering
+name: sebkln/content-slug-basic
+label: Speaking URL fragments (Basic configuration)

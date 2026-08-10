@@ -1,0 +1,13 @@
+@import 'EXT:content_slug/Configuration/TypoScript/setup.typoscript'
+
+
+lib.contentElement {
+    // Override default templates of fluid_styled_content:
+    partialRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Partials/
+    templateRootPaths.101 = EXT:content_slug/Resources/Private/Overrides/fluid_styled_content/Templates/
+}
+
+
+// Process 'fragmentIdentifier' variable in section menus:
+tt_content.menu_section.dataProcessing.10.dataProcessing.20.dataProcessing.5 = fragment-identifier
+tt_content.menu_section_pages.dataProcessing.10.dataProcessing.20.dataProcessing.5 = fragment-identifier

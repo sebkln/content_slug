@@ -4,6 +4,28 @@
 Upgrading the extension
 =======================
 
+.. _admin-upgrade-to-v6:
+
+Upgrading to EXT:content_slug to 6.x
+====================================
+
+.. warning::
+   With version 6.0.0, the TypoScript configuration is split into three sets.
+
+   **This is a breaking change in any case!**
+
+This change lets you use the extension with various templating solutions, like Content Blocks or Bootstrap Package.
+
+If you upgrade, you will need to adjust the import of the Site Set or the TypoScript set (`include_static_file` in TypoScript records).
+
+* The *Site set* with identifier `sebkln/content-slug` **no longer exists**.
+* The *TypoScript set* "Speaking URL fragments (anchors)" was renamed to "Speaking URL fragments (Basic configuration)".
+  **It no longer contains the template overrides for Fluid Styled Content.**
+  As the file path remains unchanged, the set will continue to load.
+
+When upgrading this extension, include one of the three new Site sets or TypoScript sets.
+The page :ref:`admin-sets` contains an overview and recommendations based on your type of content elements.
+
 
 .. _admin-upgrade-to-v2:
 

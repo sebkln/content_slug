@@ -1,0 +1,9 @@
+@import 'EXT:content_slug/Configuration/TypoScript/setup.typoscript'
+
+
+lib.contentBlock {
+    variables {
+        // Reference the original configuration (see imported file above for details):
+        fragmentIdentifier =< lib.contentElement.variables.fragmentIdentifier
+    }
+}

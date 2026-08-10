@@ -39,33 +39,22 @@ Perform the following steps:
    If you are using TYPO3 11.4 (or later) **and** composer, all extensions are
    automatically considered as active.
 
-3. Include the static template
+3. Include one of the Site sets or TypoScript sets
 
-   The extension ships some TypoScript code which needs to be included.
+   You can choose from three available sets.
 
-   #. Switch to the root page of your website.
-   #. Open the *Template* record.
-   #. Switch to the **Includes** tab of the template record.
-   #. Select **"Speaking URL fragments (anchors) (content_slug)"** in the field
-      *Include static (from extensions)*. It must be loaded **after** the static
-      template *"Fluid Content Elements (fluid_styled_content)"*!
-
-   .. figure:: ../../Images/AdministratorManual/include-static-template.png
-      :width: 854px
-      :alt: Include the static template
-      :class: with-shadow
-
-      Include the static template
+   See :ref:`admin-sets` for a recommendation based on your type of content elements.
 
 4. Customize configuration and templates
 
-   This extension extends EXT:fluid_styled_content and therefore provides
-   customized Fluid templates.
+   This extension adds the :typoscript:`fragmentIdentifier` variable to the Fluid templates
+   of content elements.
 
-   .. important::
+   For EXT:fluid_styled_content, ready to use templates are already provided.
 
-      If you already customized the same Fluid templates for your website,
-      you'll need to extend your version with some new variables and ViewHelpers.
+   If you use a different base for your content elements
+   (e.g. EXT:content_blocks or EXT:bootstrap_package),
+   you will need to extend the Fluid templates yourself.
 
    The :ref:`configuration` section covers TypoScript settings and templating.
    Be sure to read :ref:`consideration` first.

@@ -26,6 +26,9 @@
 		"typo3/cms-core": "^13.4.33 || ^14.3.5",
 		"ext-mbstring": "*"
 	},
+	"suggest": {
+		"typo3/cms-fluid-styled-content": "Fluid templates for TYPO3 content elements."
+	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "content_slug"

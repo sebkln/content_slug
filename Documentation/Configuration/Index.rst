@@ -17,11 +17,11 @@ Configuration
 
    .. card:: :ref:`configuration-site-settings`
 
-      For when you include the Site Set.
+      For when you include one of the Site sets.
 
    .. card:: :ref:`configuration-constants`
 
-      For when you include the TypoScript set.
+      For when you include one of the TypoScript sets.
 
    .. card:: :ref:`configuration-typoscript`
 

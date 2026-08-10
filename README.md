@@ -62,6 +62,6 @@ The extension needs to be installed as any other extension of TYPO3 CMS.
 Perform the following steps:
 
 1. Load and install the extension.
-2. Include the static template *"Speaking URL fragments (anchors) (content_slug)"* into your TypoScript template.
+2. Include one of the available Site Sets (or TypoScript sets).
 3. Add permissions for the new `tt_content` fields `tx_content_slug_fragment` and `tx_content_slug_link` for your editors.
 4. Configure the fragment with TypoScript and customize the Fluid templates, if necessary.

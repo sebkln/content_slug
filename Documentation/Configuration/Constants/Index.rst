@@ -4,7 +4,7 @@
 TypoScript Constants
 ====================
 
-If you included the TypoScript set, the extension can be configured via TypoScript constants.
+If you included one of the TypoScript sets, the extension can be configured via TypoScript constants.
 
 .. confval-menu::
    :name: confval-constants
