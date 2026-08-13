@@ -1,7 +1,4 @@
-﻿.. include:: ../../Includes.txt
-
-
-.. _editors-fields:
+﻿.. _editors-fields:
 
 =======================
 Using the anchor fields

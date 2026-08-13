@@ -1,21 +1,21 @@
-﻿.. _configuration-constants:
+﻿.. _configuration-site-settings:
 
-====================
-TypoScript Constants
-====================
+=============
+Site Settings
+=============
 
-If you included the TypoScript set, the extension can be configured via TypoScript constants.
+If you included the Site Set, the extension can be configured via Site Settings.
 
 .. confval-menu::
-   :name: confval-constants
+   :name: confval-site-settings
    :type:
    :default:
    :display: table
 
    .. confval:: plugin.tx_contentslug.settings.renderPrefix
-      :name: ts-constant-renderPrefix
-      :type: :ref:`t3tsref:data-type-boolean`
-      :default: 1
+      :name: site-setting-renderPrefix
+      :type: :ref:`t3coreapi:confval:site-setting-type-bool`
+      :default: true
 
       Enables the prefix to the human-readable URL fragment.
       By default, the content element's uid is prepended as follows:
@@ -28,9 +28,9 @@ If you included the TypoScript set, the extension can be configured via TypoScri
       You can customize the prefix in :confval:`plugin.tx_contentslug.urlFragmentPrefix<ts-setup-urlFragmentPrefix>`
 
    .. confval:: plugin.tx_contentslug.settings.renderSuffix
-      :name: ts-constant-renderSuffix
-      :type: :ref:`t3tsref:data-type-boolean`
-      :default: 0
+      :name: site-setting-renderSuffix
+      :type: :ref:`t3coreapi:confval:site-setting-type-bool`
+      :default: false
 
       Enables the suffix to the human-readable URL fragment.
       By default, the content element's uid will be appended as follows:
@@ -43,18 +43,19 @@ If you included the TypoScript set, the extension can be configured via TypoScri
       You can customize the suffix in :confval:`plugin.tx_contentslug.urlFragmentSuffix<ts-setup-urlFragmentSuffix>`
 
    .. confval:: plugin.tx_contentslug.settings.replaceFragmentInPageLinks
-      :name: ts-constant-replaceFragmentInPageLinks
-      :type: :ref:`t3tsref:data-type-boolean`
-      :default: 1
+      :name: site-setting-replaceFragmentInPageLinks
+      :type: :ref:`t3coreapi:confval:site-setting-type-bool`
+      :default: true
 
       When activated, fragment links set in the RTE or in TCA fields of type
       :php:`link` are replaced with the human-readable fragment identifier.
 
    .. confval:: plugin.tx_contentslug.settings.checkForHiddenHeaders
-      :name: ts-constant-checkForHiddenHeaders
-      :type: :ref:`t3tsref:data-type-boolean`
-      :default: 1
+      :name: site-setting-checkForHiddenHeaders
+      :type: :ref:`t3coreapi:confval:site-setting-type-bool`
+      :default: true
 
       If disabled, fragment links are replaced even if the content element's
       header is hidden. Use this with care!
       See :confval:`TypoScript Setup Reference<ts-setup-checkForHiddenHeaders>` for details.
+

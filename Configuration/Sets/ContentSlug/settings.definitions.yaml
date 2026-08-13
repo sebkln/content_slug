@@ -25,7 +25,7 @@ settings:
     default: true
     label: 'Replace fragment in page links'
     type: bool
-    description: 'When activated, fragment links in the RTE and in TCA fields of type "inputLink" are replaced with the human-readable fragment identifier.'
+    description: 'When activated, fragment links in the RTE and in TCA fields of type "link" are replaced with the human-readable fragment identifier.'
     category: contentslug.settings
   plugin.tx_contentslug.settings.checkForHiddenHeaders:
     default: true

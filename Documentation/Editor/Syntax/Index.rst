@@ -1,7 +1,4 @@
-﻿.. include:: ../../Includes.txt
-
-
-.. _editors-fragment-syntax:
+﻿.. _editors-fragment-syntax:
 
 ==============================
 Correct syntax for URL anchors
@@ -43,6 +40,6 @@ If you write a non-supported character in the URL anchor field, it will be
 
 .. tip::
 
-   **Readability:** The URL anchor doesn't have to match your header exactly.
+   **Readability:** The URL anchor does not have to match your header exactly.
    But it will be more understandable for your website's visitor if it
    reflects the content of this text section.

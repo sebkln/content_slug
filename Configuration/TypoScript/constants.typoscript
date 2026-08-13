@@ -9,7 +9,7 @@ plugin.tx_contentslug {
         # cat=Speaking URL fragments/100/2; type=boolean; label=Append a string to URL fragment: If activated, the current UID is added at the end of the URL fragment.
         renderSuffix = 0
 
-        # cat=Speaking URL fragments/100/3; type=boolean; label=Replace fragment in page links: When activated, fragment links in the RTE and in TCA fields of type 'inputLink' are replaced with the human-readable fragment identifier.
+        # cat=Speaking URL fragments/100/3; type=boolean; label=Replace fragment in page links: When activated, fragment links in the RTE and in TCA fields of type 'link' are replaced with the human-readable fragment identifier.
         replaceFragmentInPageLinks = 1
 
         # cat=Speaking URL fragments/110/1; type=boolean; label=Check for hidden headers: If disabled, fragment links are replaced even if the content element`s header is hidden. Use this with care! Check the manual for details.

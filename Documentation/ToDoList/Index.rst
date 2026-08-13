@@ -1,7 +1,4 @@
-﻿.. include:: ../Includes.txt
-
-
-.. _todo:
+﻿.. _todo:
 
 ==========
 To-Do list

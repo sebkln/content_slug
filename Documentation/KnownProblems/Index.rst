@@ -1,7 +1,4 @@
-﻿.. include:: ../Includes.txt
-
-
-.. _known-problems:
+﻿.. _known-problems:
 
 ==============
 Known Problems
@@ -15,7 +12,7 @@ Current limitation in :typoscript:`FragmentIdentifierProcessor`
 
 While the DataProcessor can process TypoScript references (:typoscript:`=<`)
 to other cObjects **inside** :typoscript:`fragmentIdentifier`,
-:typoscript:`lib.contentElement.variables.fragmentIdentifier` mustn't be a
+:typoscript:`lib.contentElement.variables.fragmentIdentifier` must not be a
 reference by itself.
 
 .. code-block:: typoscript
@@ -33,7 +30,7 @@ reference by itself.
        }
    }
 
-   // This won't work:
+   // This will not work:
    lib.contentElement {
        variables.fragmentIdentifier =< lib.yourCustomFragment
    }

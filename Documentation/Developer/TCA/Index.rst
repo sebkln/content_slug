@@ -1,7 +1,4 @@
-﻿.. include:: ../../Includes.txt
-
-
-.. _developer-tca:
+﻿.. _developer-tca:
 
 =============
 Adjusting TCA
@@ -31,7 +28,7 @@ Some extensions might not use this palette, though. Instead, a reduced or
 custom palette is used to display the header field with some selected
 fields in the backend.
 
-A good example is `EXT:beautyofcode <https://extensions.typo3.org/extension/beautyofcode>`__.
+A good example is :t3ext:`EXT:beautyofcode`.
 This useful extension by developer Felix Nagel allows to render code examples
 with syntax highlighting and line numbers.
 It uses the reduced palette ``header`` (mind the missing *s* at the end).
@@ -105,7 +102,7 @@ You need to adjust the **name** of the custom palette (line 3) and set the
 
    While you *could* add the fragment fields to the existing ``header`` palette,
    be aware of the consequences: this would also add them to CTypes like
-   ``shortcut`` and ``html``, which won't render the header in the frontend
+   ``shortcut`` and ``html``, which will not render the header in the frontend
    (by default).
 
 
@@ -119,15 +116,15 @@ What does the ``uniqueInPid`` evaluation even do?
 
 It's a mechanism that prevents duplicate field values on the same page.
 This is **very** helpful for our URL fragments, as they **need** to be
-unique on each page (otherwise the browser can't distinguish the anchor links).
+unique on each page (otherwise the browser can not distinguish the anchor links).
 
 
 Why would I even consider to remove it then!?
 ---------------------------------------------
 
 Imagine a website with translated content on the same page.
-The ``uniqueInPid`` evaluation doesn't distinguish between languages.
-That means you can't have identical anchor links in e.g. English and German.
+The ``uniqueInPid`` evaluation does not distinguish between languages.
+That means you can not have identical anchor links in e.g. English and German.
 
 In practice this seldom is an issue. But it might become one
 if you want to use technical terms or brand names as anchors
@@ -143,7 +140,7 @@ How to remove it from the list of eval functions
    well-trained editors that fully understand the consequences.
 
 The following code removes ``uniqueInPid`` from the list of eval functions.
-You mustn't remove the other two evaluations!
+You must not remove the other two evaluations!
 
 .. code-block:: php
 

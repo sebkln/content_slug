@@ -1,7 +1,4 @@
-﻿.. include:: ../../Includes.txt
-
-
-.. _consideration:
+﻿.. _consideration:
 
 ==============
 Considerations
@@ -45,3 +42,11 @@ potential issue.
    You can **remove or adapt the default prefix** or configure a **suffix** instead.
    The extension provides  :ref:`TypoScript configuration <configuration-typoscript>`
    with stdWrap support for this.
+
+.. tip::
+
+   The extension automatically :ref:`replaces certain characters <editors-fragment-syntax>`.
+   This includes **uppercase characters**.
+
+   Depending in your project, it might be a solution to use ``id`` attributes containing
+   uppercase characters for templating, for example "mainNavigation" or a prefix like "JS_navigation".

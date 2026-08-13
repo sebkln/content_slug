@@ -1,11 +1,8 @@
-﻿.. include:: ../../Includes.txt
+﻿.. _configuration-typoscript:
 
-
-.. _configuration-typoscript:
-
-==========================
-TypoScript Setup Reference
-==========================
+================
+TypoScript Setup
+================
 
 .. contents::
    :depth: 2
@@ -14,41 +11,28 @@ TypoScript Setup Reference
 Configure prefix and suffix
 ===========================
 
-:typoscript:`plugin.tx_contentslug`
+Any configuration needs to be prefixed with  :typoscript:`plugin.tx_contentslug.`
 
-.. container:: ts-properties
+.. confval-menu::
+   :name: confval-setup
+   :type:
+   :default:
+   :display: table
 
-   =========================== =================================================== ================================
-   Property                    Data type                                           Default
-   =========================== =================================================== ================================
-   urlFragmentPrefix_          :ref:`Content Object (cObject) <data-type-cobject>` *TEXT cObject with current UID*
-   urlFragmentSuffix_          :ref:`Content Object (cObject) <data-type-cobject>` *TEXT cObject with current UID*
-   replaceFragmentInPageLinks_ :ref:`t3tsref:data-type-boolean`                    1
-   checkForHiddenHeaders_      :ref:`t3tsref:data-type-boolean`                    1
-   =========================== =================================================== ================================
+   .. confval:: urlFragmentPrefix
+      :name: ts-setup-urlFragmentPrefix
+      :type: :ref:`t3tsref:data-type-cobject`
+      :default: *TEXT cObject with current UID*
 
-
-.. _urlFragmentPrefix:
-
-urlFragmentPrefix
------------------
-
-.. container:: table-row
-
-   Property
-      urlFragmentPrefix
-
-   Data type
-      :ref:`Content Object (cObject) <data-type-cobject>`
-
-   Description
       This cObject can be used to render a prefix for the human-readable URL fragment.
 
       Prefix, suffix, and fragment are assembled in the custom variable
       :ref:`fragmentIdentifier <fragmentIdentifierFluidVariable>` of ``lib.contentElement``.
 
       .. note::
-         The prefix is **enabled** by default with the :ref:`corresponding TypoScript constant <settings.renderPrefix>`.
+         The prefix is **enabled** by default with the corresponding
+         :confval:` Site setting <site-setting-renderPrefix>`
+         (or :confval:` TypoScript constant <ts-constant-renderPrefix>`).
 
       **Default:**
 
@@ -68,28 +52,20 @@ urlFragmentPrefix
          c<uid>-<human-readable-fragment>
          c123-section-of-interest
 
+   .. confval:: urlFragmentSuffix
+      :name: ts-setup-urlFragmentSuffix
+      :type: :ref:`t3tsref:data-type-cobject`
+      :default: *TEXT cObject with current UID*
 
-.. _urlFragmentSuffix:
-
-urlFragmentSuffix
------------------
-
-.. container:: table-row
-
-   Property
-      urlFragmentSuffix
-
-   Data type
-      :ref:`Content Object (cObject) <data-type-cobject>`
-
-   Description
       This cObject can be used to render a suffix for the human-readable URL fragment.
 
       Prefix, suffix, and fragment are assembled in the custom variable
       :ref:`fragmentIdentifier <fragmentIdentifierFluidVariable>` of ``lib.contentElement``.
 
       .. note::
-         The suffix is **disabled** by default with the :ref:`corresponding TypoScript constant <settings.renderSuffix>`.
+         The suffix is **disabled** by default with the corresponding
+         :confval:` Site setting <site-setting-renderSuffix>`
+         (or :confval:` TypoScript constant <ts-constant-renderSuffix>`).
 
       **Default:**
 
@@ -109,38 +85,19 @@ urlFragmentSuffix
          <human-readable-fragment>-<uid>
          section-of-interest-123
 
+   .. confval:: replaceFragmentInPageLinks
+      :name: ts-setup-replaceFragmentInPageLinks
+      :type: :ref:`t3tsref:data-type-boolean`
+      :default: 1
 
-.. _replaceFragmentInPageLinks:
+      When activated, fragment links set in the RTE or in TCA fields of type
+      :php:`link` are replaced with the human-readable fragment identifier.
 
-settings.replaceFragmentInPageLinks
------------------------------------
+   .. confval:: checkForHiddenHeaders
+      :name: ts-setup-checkForHiddenHeaders
+      :type: :ref:`t3tsref:data-type-boolean`
+      :default: 1
 
-.. container:: table-row
-
-   Property
-      settings.replaceFragmentInPageLinks
-
-   Data type
-     :ref:`t3tsref:data-type-boolean`
-
-   Description
-      When activated, fragment links set in the RTE or TCA fields of type
-      :php:`inputLink` are replaced with the human-readable fragment identifier.
-   Default
-      :typoscript:`1` (via TypoScript constant)
-
-
-.. _checkForHiddenHeaders:
-
-settings.checkForHiddenHeaders
------------------------------------
-.. container:: table-row
-
-   Property
-      settings.checkForHiddenHeaders
-   Data type
-      :ref:`t3tsref:data-type-boolean`
-   Description
       By default, this extension renders the human-readable fragment as an `id` attribute
       on the content element's header. Therefore, a given fragment will not be used
       for content elements that have a hidden (non-rendered) header.
@@ -152,23 +109,21 @@ settings.checkForHiddenHeaders
 
       Recommendation: add the `id` attribute to the Fluid layout of content elements.
 
-      ..  code-block:: html
-          :caption: EXT:site_package/Resources/Private/Layouts/ContentElements/Default.html
+      .. code-block:: html
+         :caption: EXT:site_package/Resources/Private/Layouts/ContentElements/Default.html
 
-          <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
-              <f:if condition="{data._LOCALIZED_UID}">
-                  <a id="c{data._LOCALIZED_UID}"></a>
-              </f:if>
+         <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+             <f:if condition="{data._LOCALIZED_UID}">
+                 <a id="c{data._LOCALIZED_UID}"></a>
+             </f:if>
 
-              <!-- Add these lines: -->
-              <f:if condition="{fragmentIdentifier}">
-                  <div id="{fragmentIdentifier}"></div>
-              </f:if>
+             <!-- Add these lines: -->
+             <f:if condition="{fragmentIdentifier}">
+                 <div id="{fragmentIdentifier}"></div>
+             </f:if>
 
-              <!-- etc. -->
-          </div>
-   Default
-      :typoscript:`1` (via TypoScript constant)
+             <!-- etc. -->
+         </div>
 
 
 .. _fragmentIdentifierFluidVariable:
@@ -185,8 +140,7 @@ and allows to configure the complete URL fragment at a central place.
    #. The custom DataProcessor :php:`FragmentIdentifierProcessor`, which will
       process the URL fragments for the "Section Index" content elements.
    #. The :php:`ModifyFragment` event listener, which allows to overwrite fragments for
-      links set in the rich text editor or in TCA fields with renderType
-      :php:`inputLink`.
+      links set in the rich text editor or in TCA fields of type :php:`link`.
 
 
 .. code-block:: typoscript

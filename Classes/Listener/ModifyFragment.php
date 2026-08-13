@@ -18,7 +18,7 @@ use TYPO3\CMS\Frontend\Event\ModifyPageLinkConfigurationEvent;
 
 /**
  * Replaces the default fragment (like "#c123") with the human-readable version, if given.
- * This applies to links in the RTE, as well as TCA fields with renderType "inputLink".
+ * This applies to links in the RTE, as well as to TCA fields of type "link".
  *
  * @package Sebkln\ContentSlug\Listener
  */

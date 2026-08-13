@@ -1,20 +1,17 @@
-﻿.. include:: ../../Includes.txt
-
-
-.. _templating:
+﻿.. _templating:
 
 ==========
 Templating
 ==========
 
 This extension enhances the existing TYPO3 content elements, which are commonly
-rendered with `EXT:fluid_styled_content`. Therefore, customized Fluid templates
+rendered with :t3ext:`EXT:fluid_styled_content`. Therefore, customized Fluid templates
 have to be provided by this extension.
 
 It also works well with the Bootstrap Package.
 
 In both cases, be sure to load the configuration of this extension **after**
-`EXT:fluid_styled_content` or `EXT:bootstrap_package`.
+:t3ext:`EXT:fluid_styled_content` or :t3ext:`EXT:bootstrap_package`.
 
 
 .. _templating-ts:

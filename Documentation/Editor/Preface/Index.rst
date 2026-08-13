@@ -1,7 +1,4 @@
-﻿.. include:: ../../Includes.txt
-
-
-.. _editors-preface:
+﻿.. _editors-preface:
 
 =======
 Preface

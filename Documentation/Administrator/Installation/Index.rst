@@ -1,7 +1,4 @@
-﻿.. include:: ../../Includes.txt
-
-
-.. _admin-installation:
+﻿.. _admin-installation:
 
 ============
 Installation
@@ -39,7 +36,7 @@ Perform the following steps:
    Activate the extension in the TYPO3 backend module
    **Admin Tools > Extensions**.
 
-   If you're using TYPO3 11.4 (or later) **and** composer, all extensions are
+   If you are using TYPO3 11.4 (or later) **and** composer, all extensions are
    automatically considered as active.
 
 3. Include the static template

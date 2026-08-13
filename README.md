@@ -42,7 +42,7 @@ An editor can activate these with a checkbox for individual content elements.
 - **Editors** can set individual, human-readable fragment identifiers per content element.
 - **Editors** can use a button to automatically generate a fragment from the current header.
 - **Editors** can activate anchor links to headers per content element.
-- **Scope:** The human-readable fragment is used in *Section Index* menus, as well as for links in the RTE or TCA fields with renderType `inputLink`.
+- **Scope:** The human-readable fragment is used in *Section Index* menus, as well as for links in the RTE or in TCA fields of type `link`.
 - **Fallback:** If no custom fragment is given, or the header is hidden, the default fragment is used in rendered links.
 - **Evaluation #1:** Only supported characters are stored. Special characters are replaced.
 - **Evaluation #2:** All content elements on the same page will get a unique fragment identifier.
