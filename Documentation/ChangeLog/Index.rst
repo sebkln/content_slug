@@ -20,6 +20,9 @@ ChangeLog
 
    If a version contains new features or important changes, I'll write a blog post about it (available in English and German):
 
+   August 23, 2026: `"Speaking URL fragments" 6.0.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-6-0-0/>`__
+      Breaking change: New Site Sets and TypoScript includes / Improved support of Content Blocks and other templating solutions.
+
    December 6, 2025: `"Speaking URL fragments" 5.0.0 and 4.3.0 (EXT:content_slug) <https://www.sebkln.de/en/news/content-slug-5-0-0/>`__
       New: Support of TYPO3 v14. / Bugfix: Prevent issue with Redirects module.
 

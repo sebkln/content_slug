@@ -6,7 +6,7 @@
              typo3-core-preferred="stable"
              interlink-shortcode="sebkln/content-slug"
   />
-  <project title="Speaking URL fragments (anchors)" release="5.0.0" version="5.0" copyright="since 2020 by Sebastian Klein"/>
+  <project title="Speaking URL fragments (anchors)" release="6.0.0" version="6.0" copyright="since 2020 by Sebastian Klein"/>
   <inventory id="t3coreapi" url="https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/"/>
   <inventory id="t3tca" url="https://docs.typo3.org/m/typo3/reference-tca/main/en-us/"/>
   <inventory id="t3tsref" url="https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/"/>
